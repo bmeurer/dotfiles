@@ -30,8 +30,14 @@ alias la='ls -A'
 alias ll='ls -l'
 alias l='ls -CF'
 
+# Handy aliases for git
+alias gau='git add -u && git status'
+alias gst='git status'
+
 # Shortcuts for Cocoa applications
 if [[ "${OSTYPE}" =~ "darwin" ]]; then
 	alias emacs="open -b org.gnu.Emacs -g "
 	alias gvim=mvim
 fi
+
+# vim:set ft=sh:
