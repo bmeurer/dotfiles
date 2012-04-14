@@ -1,0 +1,63 @@
+# .gitconfig - Global git configuration file
+#
+# Copyright 2001-2012 Benedikt Meurer
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+[user]
+	name = Benedikt Meurer
+	email = benedikt.meurer@googlemail.com
+	signingkey = benedikt.meurer@googlemail.com
+
+[alias]
+	au = !git add -u && git st
+	ci = commit -v
+	co = checkout
+	dc = diff --cached
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	prune-all = !git remote | xargs -n 1 git remote prune
+	show-graph = log --graph --abbrev-commit --pretty=oneline
+	show-merged = branch -a --merged
+	show-merged-local = branch -l --merged
+	show-merged-remote = branch -r --merged
+	show-unmerged = branch -a --no-merged
+	show-unmerged-local = branch -l --no-merged
+	show-unmerged-remote = branch -r --no-merged
+	st = status
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
+	interactive = auto
+	grep = auto
+	showbranch = auto
+
+[core]
+	compression = 9
+	fsyncobjectfiles = true
+	excludesfile = ~/.gitignore
+
+[github]
+	user = bmeurer
+
+[diff]
+	renamelimit = 0
+
+[pack]
+	threads = 0
+
+# vim:set ft=gitconfig noet sw=8 ts=8:
