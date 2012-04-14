@@ -1,0 +1,109 @@
+;; OS X Setup
+(setq mac-command-modifier 'meta)
+
+;; Keybindings as suggested by "Effective Emacs"
+(global-set-key "\C-w" 'backward-kill-word) ; Ctrl+D to kill word
+(global-set-key "\C-x\C-k" 'kill-region)
+(global-set-key "\C-c\C-k" 'kill-region)
+(global-set-key "\M-s" 'isearch-forward-regexp)
+(global-set-key "\M-r" 'isearch-backward-regexp)
+(global-set-key "\M-g" 'goto-line)
+
+;; avoid the annoying startup message.
+(setq inhibit-startup-message t)
+
+;; setup some nice color theme
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-robin-hood)
+
+;; seems sensible for this to be the first line..
+(add-to-list 'load-path "~/.emacs.d/")
+
+;; enable save history mode
+(savehist-mode 1)
+
+;; save place in files
+(require 'saveplace)
+(setq-default save-place t)
+
+;; add CMake mode
+(require 'cmake-mode)
+(setq auto-mode-alist
+      (append
+       '(("CMakeLists\\.txt\\'" . cmake-mode)
+         ("\\.cmake\\'" . cmake-mode))
+       auto-mode-alist))
+
+;; Do not indent using tabs by default
+(setq-default indent-tabs-mode nil)
+
+;; C/C++ setup
+(setq auto-mode-alist
+      (append
+       '(("\\.h\\'" . c++-mode))
+       auto-mode-alist))
+(require 'cc-mode)
+(c-add-style "bmeurer"
+             '("stroustrup"
+               (c-basic-offset . 2)
+               (c-offsets-alist
+                (innamespace . 0))))
+(setq c-default-style "bmeurer")
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (c-toggle-auto-newline -1)
+            (c-toggle-auto-hungry-state 1)))
+
+;; Tuareg-Mode setup
+(setq auto-mode-alist
+  (cons '("\\.ml\\w?" . tuareg-mode) auto-mode-alist))
+(autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code." t)
+(autoload 'camldebug "cameldeb" "Run the Caml debugger." t)
+
+;; Haskell-Mode setup
+(load "/opt/local/share/emacs/site-lisp/haskell-mode-2.4/haskell-site-file")
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+(add-hook 'haskell-mode-hook 'font-lock-mode)
+(add-hook 'haskell-mode-hook 'imenu-add-menubar-index)
+
+;; AUCTeX mode setup
+(require 'tex-site)
+(add-hook 'LaTeX-mode-hook
+          'TeX-source-correlate-mode)
+(setq TeX-source-correlate-method 'synctex)
+(add-hook 'LaTeX-mode-hook
+          (lambda ()
+            (add-to-list 'TeX-expand-list
+                 '("%q" skim-make-url))))
+(defun skim-make-url () (concat
+       (TeX-current-line)
+       " "
+       (expand-file-name (funcall file (TeX-output-extension) t)
+           (file-name-directory (TeX-master-file)))
+       " "
+       (buffer-file-name)))
+(setq TeX-view-program-list '(("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline %q")))
+(setq TeX-view-program-selection '((output-pdf "Skim")))
+
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(TeX-PDF-mode t)
+; '(TeX-output-view-style (quote (("^dvi$" "." "open %o") ("^pdf$" "." "open -a /Applications/Skim.app %o") ("^html?$" "." "open %o"))))
+ '(column-number-mode t)
+ '(default-frame-alist (quote ((tool-bar-lines . 0) (menu-bar-lines . 1) (right-fringe) (left-fringe) (width . 120) (height . 44))))
+ '(save-place t nil (saveplace))
+ '(show-paren-mode t)
+ '(size-indication-mode t)
+ '(tool-bar-mode nil)
+ '(transient-mark-mode t))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
