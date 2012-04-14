@@ -1,0 +1,108 @@
+" .vimrc - VI Improved configuration file
+"
+" Copyright 2001-2012 Benedikt Meurer
+"
+" Licensed under the Apache License, Version 2.0 (the "License");
+" you may not use this file except in compliance with the License.
+" You may obtain a copy of the License at
+"
+"     http://www.apache.org/licenses/LICENSE-2.0
+"
+" Unless required by applicable law or agreed to in writing, software
+" distributed under the License is distributed on an "AS IS" BASIS,
+" WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+" See the License for the specific language governing permissions and
+" limitations under the License.
+"
+
+" Sync if idle for atleast one minute or 250 chars entered
+set updatetime=60000
+set updatecount=250
+set swapsync=""
+
+set wildignore=*.a,*.cma,*.cmi,*.cmo,*.cmx,*.cmxa,*.cmxs,*.o
+set wildmode=longest:list
+
+set autoindent
+set nobackup
+set nowritebackup
+set nocompatible
+set hlsearch
+set incsearch
+set nonumber
+set shiftwidth=8
+set tabstop=8
+set nowrapscan
+set noignorecase
+set mousehide
+set backspace=2	" make <BS> useable in Insert mode	
+set formatoptions=croql
+syntax on
+
+" hilight matching parentesis
+set sm
+
+" display date-time in rulter
+set ruler
+"set rulerformat=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
+
+" colors
+hi Normal	guibg=White guifg=Black
+hi Comment	term=bold ctermfg=DarkBlue gui=NONE guibg=White guifg=DarkBlue
+hi Constant	term=bold ctermfg=Blue gui=bold guibg=White guifg=Blue
+hi Statement	term=bold ctermfg=DarkRed gui=bold guibg=White guifg=DarkRed
+hi Type		term=bold ctermfg=DarkRed gui=bold guibg=White guifg=DarkRed
+hi PreProc	term=NONE ctermfg=Magenta gui=bold guibg=White guifg=Magenta
+hi Error	term=reverse ctermbg=DarkRed gui=italic guibg=Red guifg=White
+hi String	term=bold ctermfg=DarkGreen gui=bold guibg=White guifg=DarkGreen
+hi Visual	term=reverse ctermfg=DarkBlue gui=bold guibg=Blue guifg=White
+hi Cursor	term=NONE gui=NONE guibg=Green guifg=Black
+
+" folding
+set fen
+set fdm=marker
+
+if has("autocmd")
+	autocmd BufRead *.desktop set encoding=UTF-8
+	autocmd BufRead *.desktop.in set encoding=UTF-8
+	autocmd BufRead *.d set ts=2 sw=2 et cindent
+	autocmd BufRead *.cs set ts=2 sw=2 et cindent ai
+	autocmd BufRead *.rb set ts=2 sw=2 et ai
+	autocmd BufRead *.py set ts=2 sw=2 et ai
+	autocmd BufRead *.scm set ts=2 sw=2 et ai cindent
+	autocmd BufRead *.h set ts=2 sw=2 et cindent
+	autocmd BufRead *.h.in set ts=2 sw=2 et cindent
+	autocmd BufRead *.c set ts=2 sw=2 et cindent
+	autocmd BufRead *.gob set ts=2 sw=2 et cindent syntax=c
+	autocmd BufRead *.hh set ts=2 sw=2 et cindent
+	autocmd BufRead *.hpp set ts=2 sw=2 et cindent
+	autocmd BufRead *.cc set ts=2 sw=2 et cindent
+	autocmd BufRead *.cpp set ts=2 sw=2 et cindent
+	autocmd BufRead acxosd.conf set ts=2 sw=2 et encoding=utf-8
+	autocmd BufRead *.java set ts=2 sw=2 et cindent encoding=utf-8
+	autocmd BufRead *.m4 set ts=2 sw=2 et
+	autocmd BufRead *.ac set ts=2 sw=2 et
+	autocmd BufRead *.tex set ts=2 sw=2 et
+	autocmd BufRead *.html set ts=2 sw=2 et
+	autocmd BufRead *.xml set ts=2 sw=2 et encoding=utf-8
+	autocmd BufRead *grace2d.conf set ts=2 sw=2 et encoding=utf-8
+	autocmd BufRead *.po set encoding=UTF-8
+	autocmd BufRead *.properties set encoding=iso8859-1
+	autocmd BufRead *.ml set syntax=ocaml ts=2 sw=2 et
+	autocmd BufRead *.mli set syntax=ocaml ts=2 sw=2 et
+	autocmd BufRead *.mlp set syntax=ocaml ts=2 sw=2 et
+	autocmd BufRead *.ml.ab set syntax=ocaml ts=2 sw=2 et
+endif
+
+" lower the VIM update timer
+set updatetime=1000
+
+"
+" LLVM stuff
+"
+augroup filetype
+  au! BufRead,BufNewFile *.ll     set filetype=llvm
+  au! BufRead,BufNewFile *.td     set filetype=tablegen
+augroup END
+au Syntax llvm     so ~/.vim/syntax/llvm.vim
+au Syntax tablegen so ~/.vim/syntax/tablegen.vim
