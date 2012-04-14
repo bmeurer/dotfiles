@@ -22,10 +22,12 @@ for SYMLINK in ${SYMLINKS}; do
 	BASENAME=$(basename "${SYMLINK/%.symlink}")
 	if [ -n "${BASENAME}" ]; then
 		TARGET="${HOME}/.${BASENAME}"
-		if [ -e "${TARGET}" -a ! -L "${TARGET}" ]; then
+		if [ -L "${TARGET}" ]; then
+			rm -f "${TARGET}" || exit 1
+		elif [ -e "${TARGET}"  ]; then
 			mv "${TARGET}" "${TARGET}.bak" || exit 1
 		fi
 		echo "Installing ${SYMLINK} as ~/.${BASENAME}..."
-		ln -sf "${PWD#${HOME}/}/${SYMLINK}" "${TARGET}" || exit 1
+		ln -s "${PWD#${HOME}/}/${SYMLINK}" "${TARGET}" || exit 1
 	fi
 done
