@@ -46,6 +46,9 @@
 	grep = auto
 	showbranch = auto
 
+[advice]
+	statusHints = false
+
 [core]
 	compression = 9
 	fsyncobjectfiles = true
