@@ -63,4 +63,7 @@
 [pack]
 	threads = 0
 
+[apply]
+	whitespace = nowarn
+
 # vim:set ft=gitconfig noet sw=8 ts=8:
