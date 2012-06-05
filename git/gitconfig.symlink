@@ -51,7 +51,7 @@
 
 [core]
 	compression = 9
-	fsyncobjectfiles = true
+	fsyncobjectfiles = yes
 	excludesfile = ~/.gitignore
 
 [github]
