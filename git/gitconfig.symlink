@@ -22,6 +22,7 @@
 
 [alias]
 	au = !git add -u && git st
+	br = branch
 	ci = commit -v
 	co = checkout
 	dc = diff --cached
