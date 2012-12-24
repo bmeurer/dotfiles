@@ -46,9 +46,6 @@ set sm
 set ruler
 "set rulerformat=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 
-" autodetection
-filetype plugin indent on
-
 " colors
 hi Normal	guibg=White guifg=Black
 hi Comment	term=bold ctermfg=DarkBlue gui=NONE guibg=White guifg=DarkBlue
@@ -109,3 +106,9 @@ augroup filetype
 augroup END
 au Syntax llvm     so ~/.vim/syntax/llvm.vim
 au Syntax tablegen so ~/.vim/syntax/tablegen.vim
+
+" OMLet
+let omlet_indent_let=0
+
+" autodetection
+filetype plugin indent on
