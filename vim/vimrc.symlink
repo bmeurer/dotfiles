@@ -46,6 +46,9 @@ set sm
 set ruler
 "set rulerformat=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 
+" autodetection
+filetype plugin indent on
+
 " colors
 hi Normal	guibg=White guifg=Black
 hi Comment	term=bold ctermfg=DarkBlue gui=NONE guibg=White guifg=DarkBlue
