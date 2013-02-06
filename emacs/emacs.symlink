@@ -34,9 +34,6 @@
 (color-theme-initialize)
 (color-theme-robin-hood)
 
-;; seems sensible for this to be the first line..
-(add-to-list 'load-path "~/.emacs.d/")
-
 ;; enable save history mode
 (savehist-mode 1)
 
@@ -45,12 +42,12 @@
 (setq-default save-place t)
 
 ;; add CMake mode
-(require 'cmake-mode)
 (setq auto-mode-alist
       (append
        '(("CMakeLists\\.txt\\'" . cmake-mode)
          ("\\.cmake\\'" . cmake-mode))
        auto-mode-alist))
+(autoload 'cmake-mode "~/.emacs.d/cmake-mode.el" t)
 
 ;; Do not indent using tabs by default
 (setq-default indent-tabs-mode nil)
@@ -79,23 +76,23 @@
 (autoload 'camldebug "cameldeb" "Run the Caml debugger." t)
 
 ;; AUCTeX mode setup
-(require 'tex-site)
-(add-hook 'LaTeX-mode-hook
-          'TeX-source-correlate-mode)
-(setq TeX-source-correlate-method 'synctex)
-(add-hook 'LaTeX-mode-hook
-          (lambda ()
-            (add-to-list 'TeX-expand-list
-                 '("%q" skim-make-url))))
-(defun skim-make-url () (concat
-       (TeX-current-line)
-       " "
-       (expand-file-name (funcall file (TeX-output-extension) t)
-           (file-name-directory (TeX-master-file)))
-       " "
-       (buffer-file-name)))
-(setq TeX-view-program-list '(("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline %q")))
-(setq TeX-view-program-selection '((output-pdf "Skim")))
+;(require 'tex-site)
+;(add-hook 'LaTeX-mode-hook
+;          'TeX-source-correlate-mode)
+;(setq TeX-source-correlate-method 'synctex)
+;(add-hook 'LaTeX-mode-hook
+;          (lambda ()
+;            (add-to-list 'TeX-expand-list
+;                 '("%q" skim-make-url))))
+;(defun skim-make-url () (concat
+;       (TeX-current-line)
+;       " "
+;       (expand-file-name (funcall file (TeX-output-extension) t)
+;           (file-name-directory (TeX-master-file)))
+;       " "
+;       (buffer-file-name)))
+;(setq TeX-view-program-list '(("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline %q")))
+;(setq TeX-view-program-selection '((output-pdf "Skim")))
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
@@ -103,9 +100,8 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(TeX-PDF-mode t)
-; '(TeX-output-view-style (quote (("^dvi$" "." "open %o") ("^pdf$" "." "open -a /Applications/Skim.app %o") ("^html?$" "." "open %o"))))
  '(column-number-mode t)
- '(default-frame-alist (quote ((tool-bar-lines . 0) (menu-bar-lines . 1) (right-fringe) (left-fringe) (width . 120) (height . 44))))
+ '(default-frame-alist (quote ((tool-bar-lines . 0) (menu-bar-lines . 1) (right-fringe) (left-fringe) (width . 80) (height . 50))))
  '(save-place t nil (saveplace))
  '(show-paren-mode t)
  '(size-indication-mode t)
