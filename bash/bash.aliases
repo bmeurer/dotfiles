@@ -1,6 +1,6 @@
 # bash.aliases - Various useful bash aliases
 #
-# Copyright 2001-2012 Benedikt Meurer
+# Copyright 2001-2013 Benedikt Meurer
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -31,8 +31,11 @@ alias ll='ls -l'
 alias l='ls -CF'
 
 # Handy aliases for git
-alias gau='git add -u && git status'
-alias gst='git status'
+alias au='git au'
+alias ci='git ci'
+alias cia='git ci -a'
+alias co='git co'
+alias st='git st'
 
 # Shortcuts for Cocoa applications
 if [[ "${OSTYPE}" =~ "darwin" ]]; then
