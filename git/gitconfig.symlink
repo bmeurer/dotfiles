@@ -26,6 +26,7 @@
 	ci = commit -v
 	co = checkout
 	dc = diff --cached
+	ff = merge --ff-only
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	prune-all = !git remote | xargs -n 1 git remote prune
