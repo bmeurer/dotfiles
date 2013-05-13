@@ -38,6 +38,7 @@
 	show-unmerged-local = branch -l --no-merged
 	show-unmerged-remote = branch -r --no-merged
 	st = status
+	sync = "!f() { echo Syncing $1 with master && git checkout master && git pull && git checkout $1 && git rebase master; }; f"
 
 [color]
 	diff = auto
