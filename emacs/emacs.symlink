@@ -15,7 +15,20 @@
 ;; limitations under the License.
 ;;
 
+;;
+(require 'cl)
+
+;;
+;; Additional load paths
+;;
+(labels ((add-path (p)
+                   (add-to-list 'load-path
+                                (concat "~/.emacs.d/" p))))
+  (add-path "lisp"))
+
+;;
 ;; OS X Setup
+;;
 (setq mac-command-modifier 'meta)
 
 ;; Keybindings as suggested by "Effective Emacs"
@@ -28,11 +41,6 @@
 
 ;; avoid the annoying startup message.
 (setq inhibit-startup-message t)
-
-;; setup some nice color theme
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-robin-hood)
 
 ;; enable save history mode
 (savehist-mode 1)
@@ -47,27 +55,15 @@
        '(("CMakeLists\\.txt\\'" . cmake-mode)
          ("\\.cmake\\'" . cmake-mode))
        auto-mode-alist))
-(autoload 'cmake-mode "~/.emacs.d/cmake-mode.el" t)
+(autoload 'cmake-mode "cmake-mode" t)
 
 ;; Do not indent using tabs by default
 (setq-default indent-tabs-mode nil)
 
-;; C/C++ setup
-(setq auto-mode-alist
-      (append
-       '(("\\.h\\'" . c++-mode))
-       auto-mode-alist))
-(require 'cc-mode)
-(c-add-style "bmeurer"
-             '("stroustrup"
-               (c-basic-offset . 2)
-               (c-offsets-alist
-                (innamespace . 0))))
-(setq c-default-style "bmeurer")
-(add-hook 'c-mode-common-hook
-          (lambda ()
-            (c-toggle-auto-newline -1)
-            (c-toggle-auto-hungry-state 1)))
+;; Google C/C++ Style
+(require 'google-c-style)
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 ;; Tuareg-Mode setup
 (setq auto-mode-alist
