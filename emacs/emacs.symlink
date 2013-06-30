@@ -54,18 +54,45 @@
   (add-path "lisp"))
 
 ;;
-;; Marmalade setup
+;; Package manager setup
 ;;
 (require 'package)
-(add-to-list 'package-archives
-    '("marmalade" .
-      "http://marmalade-repo.org/packages/"))
+; Package repositories
+(dolist (source '(("marmalade" .  "http://marmalade-repo.org/packages/")
+		  ("elpa" . "http://tromey.com/elpa/")
+		  ("melpa" . "http://melpa.milkbox.net/packages/")
+		  ))
+  (add-to-list 'package-archives source t))
 (package-initialize)
+; Required packages (checked upon each start)
+(when (not package-archive-contents)
+  (package-refresh-contents))
+(defvar bmeurer/packages
+  '(autopair cmake-mode magit solarized-theme tuareg))
+(dolist (p bmeurer/packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
 
 ;;
 ;; Solarized theme
 ;;
 (load-theme 'solarized-dark)
+
+;;
+;; Autopair mode
+;;
+(require 'autopair)
+(setq autopair-autowrap t)
+(add-hook 'c-mode-common-hook ;; enable autopair in C/C++
+	  #'(lambda () (autopair-mode)))
+(add-hook 'c-mode-common-hook ;; disable pairing of { in C/C++ comments
+	  #'(lambda ()
+	      (push ?{
+		    (getf autopair-dont-pair :comment))))
+(add-hook 'c++-mode-hook ;; enable pairing of < > in C++
+          #'(lambda ()
+              (push '(?< . ?>)
+                    (getf autopair-extra-pairs :code))))
 
 ;;
 ;; OS X Setup
