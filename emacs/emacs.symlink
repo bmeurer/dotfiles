@@ -73,12 +73,13 @@
 (setq mac-command-modifier 'meta)
 
 ;; Keybindings as suggested by "Effective Emacs"
-(global-set-key "\C-w" 'backward-kill-word) ; Ctrl+D to kill word
-(global-set-key "\C-x\C-k" 'kill-region)
-(global-set-key "\C-c\C-k" 'kill-region)
+;(global-set-key "\C-w" 'backward-kill-word) ; Ctrl+D to kill word
+;(global-set-key "\C-x\C-k" 'kill-region)
+;(global-set-key "\C-c\C-k" 'kill-region)
 (global-set-key "\M-s" 'isearch-forward-regexp)
 (global-set-key "\M-r" 'isearch-backward-regexp)
 (global-set-key "\M-g" 'goto-line)
+(global-set-key "\M-`" 'other-frame)
 
 ;; avoid the annoying startup message.
 (setq inhibit-startup-message t)
