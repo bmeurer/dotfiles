@@ -68,7 +68,14 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 (defvar bmeurer/packages
-  '(autopair cmake-mode magit solarized-theme tuareg))
+  '(auto-complete
+    auto-complete-clang
+    autopair
+    cmake-mode
+    magit
+    solarized-theme
+    tuareg
+    yasnippet))
 (dolist (p bmeurer/packages)
   (when (not (package-installed-p p))
     (package-install p)))
@@ -93,6 +100,29 @@
           #'(lambda ()
               (push '(?< . ?>)
                     (getf autopair-extra-pairs :code))))
+
+;;
+;; yasnippet
+;; (should be loaded before autocomplete so that they can work together)
+;;
+(require 'yasnippet)
+(yas-global-mode 1)
+
+;;
+;; Autocomplete mode
+;; (should be loaded after yasnippet so that they can work together)
+;;
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(ac-config-default)
+;;; set the trigger key so that it can work together with yasnippet on tab key,
+;;; if the word exists in yasnippet, pressing tab will cause yasnippet to
+;;; activate, otherwise, auto-complete will
+;(ac-set-trigger-key "TAB")
+;(ac-set-trigger-key "<tab>")
+(require 'auto-complete-clang)
+(define-key c++-mode-map (kbd "TAB") 'ac-complete-clang)
+(define-key c++-mode-map (kbd "<tab>") 'ac-complete-clang)
 
 ;;
 ;; OS X Setup
