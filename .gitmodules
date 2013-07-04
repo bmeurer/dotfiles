@@ -7,3 +7,6 @@
 [submodule "vim/vim.symlink/bundle/vim-sensible"]
 	path = vim/vim.symlink/bundle/vim-sensible
 	url = git://github.com/tpope/vim-sensible.git
+[submodule "vim/vim.symlink/bundle/vim-commentary"]
+	path = vim/vim.symlink/bundle/vim-commentary
+	url = git://github.com/tpope/vim-commentary.git
