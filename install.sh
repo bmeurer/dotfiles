@@ -2,7 +2,7 @@
 #
 # install.sh - Install these dotfiles into your home directory
 #
-# Copyright 2012 Benedikt Meurer
+# Copyright 2012-2013 Benedikt Meurer
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,6 +16,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+# Update the Git submodules
+echo "Updating git submodules..."
+git submodule init || exit $?
 
 SYMLINKS=`find * -name '*.symlink'`
 for SYMLINK in ${SYMLINKS}; do
