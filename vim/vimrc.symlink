@@ -45,7 +45,7 @@ nnoremap ; :
 " Clear highlighted searches
 nmap <silent> <Leader>/ :nohlsearch<CR>
 
-nmap <silent> <Leader>g :noautocmd execute "lvimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+nmap <silent> <Leader>g :noautocmd execute "lvimgrep /" . expand("<cword>") . "/j **" <Bar> lw<CR>
 
 "--}}}
 
