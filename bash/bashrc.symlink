@@ -16,12 +16,12 @@
 #
 
 # If not running interactively, don't do anything
-[ -z "${PS1}" ] && return
+[[ -z "${PS1}" ]] && return
 
 # Source system-wide definitions
-if [ -r /etc/bashrc ]; then
+if [[ -r /etc/bashrc ]]; then
 	. /etc/bashrc
-elif [ -r /etc/bash.bashrc ]; then
+elif [[ -r /etc/bash.bashrc ]]; then
 	. /etc/bash.bashrc
 fi
 
@@ -47,7 +47,7 @@ HISTSIZE="10000"
 HISTFILESIZE="${HISTSIZE}"
 
 # MacPorts related paths
-if [ -d /opt/local ]; then
+if [[ -d /opt/local ]]; then
 	MANPATH="/opt/local/share/man:${MANPATH}"
 	PATH="/opt/local/bin:/opt/local/sbin:${PATH}"
 	PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:${PKG_CONFIG_PATH}"
@@ -55,7 +55,7 @@ if [ -d /opt/local ]; then
 fi
 
 # depot_tools related paths
-if [ -d "${HOME}/Applications/depot_tools" ]; then
+if [[ -d "${HOME}/Applications/depot_tools" ]]; then
 	PATH="${PATH}:${HOME}/Applications/depot_tools"
 fi
 
@@ -63,11 +63,23 @@ fi
 . "${DOTFILES}/bash/bash.aliases"
 
 # Enable programmable completion features
-if [ -r /opt/local/etc/bash_completion ]; then
+if [[ -r /opt/local/etc/bash_completion ]]; then
 	. /opt/local/etc/bash_completion
-elif [ -r /etc/bash_completion ]; then
+elif [[ -r /etc/bash_completion ]]; then
 	. /etc/bash_completion
 fi
+
+# Set MAKEFLAGS based on processor count
+if [[ -f /proc/cpuinfo ]]; then
+	ncpu="$(grep -c ^processor /proc/cpuinfo)"
+else
+	ncpu="$(sysctl hw.ncpu | head -1 | grep -o '[0-9]*$')"
+fi
+if [[ -n "${ncpu}" ]]; then
+	MAKEFLAGS="${MAKEFLAGS} -j${ncpu}"
+	export MAKEFLAGS
+fi
+unset ncpu
 
 # Set PATH so it includes user's private bin
 PATH="${HOME}/bin:${PATH}"
