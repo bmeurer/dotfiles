@@ -37,16 +37,13 @@ set wildmode=longest:list
 set autoindent
 set nobackup
 set nowritebackup
-set nocompatible
 set hlsearch
-set incsearch
 set nonumber
 set shiftwidth=8
 set tabstop=8
 set nowrapscan
 set noignorecase
 set mousehide
-set backspace=2	" make <BS> useable in Insert mode	
 set formatoptions=croql
 syntax on
 

@@ -4,3 +4,6 @@
 [submodule "vim/vim.symlink/bundle/vim-scriptease"]
 	path = vim/vim.symlink/bundle/vim-scriptease
 	url = git://github.com/tpope/vim-scriptease.git
+[submodule "vim/vim.symlink/bundle/vim-sensible"]
+	path = vim/vim.symlink/bundle/vim-sensible
+	url = git://github.com/tpope/vim-sensible.git
