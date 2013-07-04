@@ -17,9 +17,13 @@
 # limitations under the License.
 #
 
+# Initialize the Git submodules
+echo "Initializing git submodules..."
+git submodule init || exit $?
+
 # Update the Git submodules
 echo "Updating git submodules..."
-git submodule init || exit $?
+git submodule update || exit $?
 
 SYMLINKS=`find * -name '*.symlink'`
 for SYMLINK in ${SYMLINKS}; do
