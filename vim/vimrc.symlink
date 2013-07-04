@@ -1,6 +1,6 @@
 " .vimrc - VI Improved configuration file
 "
-" Copyright 2001-2012 Benedikt Meurer
+" Copyright 2001-2013 Benedikt Meurer
 "
 " Licensed under the Apache License, Version 2.0 (the "License");
 " you may not use this file except in compliance with the License.
@@ -14,6 +14,10 @@
 " See the License for the specific language governing permissions and
 " limitations under the License.
 "
+
+" Pathogen
+call pathogen#infect()
+call pathogen#helptags()
 
 "--{{{ Taglist
 "-- use MacPorts exuberant-ctags
@@ -116,6 +120,3 @@ au Syntax tablegen so ~/.vim/syntax/tablegen.vim
 
 " OMLet
 let omlet_indent_let=0
-
-" autodetection
-filetype plugin indent on
