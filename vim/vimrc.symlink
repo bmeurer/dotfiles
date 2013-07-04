@@ -15,9 +15,10 @@
 " limitations under the License.
 "
 
-" Pathogen
+"--{{{ Pathogen
 call pathogen#infect()
 call pathogen#helptags()
+"--}}}
 
 "--{{{ Taglist
 "-- use MacPorts exuberant-ctags
@@ -26,24 +27,52 @@ if filereadable('/opt/local/bin/ctags')
 endif
 "--}}}
 
+"--{{{ Shortcut mappings
+
+" Change map leader from \ to ,
+let mapleader=","
+
+" CommandT plugin
+nmap <silent> <Leader>t :CommandT<CR>
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <Leader>ev :e $MYVIMRC<CR>
+nmap <silent> <Leader>sv :so $MYVIMRC<CR>
+
+" Strip off two full keystrokes from almost every Vim command
+nnoremap ; :
+
+" Clear highlighted searches
+nmap <silent> <Leader>/ :nohlsearch<CR>
+
+"--}}}
+
 " Sync if idle for atleast one minute or 250 chars entered
 set updatetime=60000
 set updatecount=250
-set swapsync=""
 
 set wildignore=*.a,*.cma,*.cmi,*.cmo,*.cmx,*.cmxa,*.cmxs,*.o
 set wildmode=longest:list
 
-set autoindent
+set hidden " Hide buffers instead of closing them
+set autoindent " always set autoindent on
+set copyindent " copy the previous indentation on autoindenting
+set showmatch " show matching parenthesis
 set nobackup
 set nowritebackup
+set noswapfile
 set hlsearch
 set nonumber
 set shiftwidth=8
 set tabstop=8
 set nowrapscan
 set noignorecase
+set smartcase " ignore case if search pattern is all lowercase,
+              " case-senstive otherwise
 set mousehide
+set title " change the terminal's title
+set history=10000 " remember more commands and search history
+set undolevels=10000 " use many muchos levels of undo
 set formatoptions=croql
 syntax on
 
@@ -71,8 +100,6 @@ set fen
 set fdm=marker
 
 if has("autocmd")
-	autocmd BufRead *.desktop set encoding=UTF-8
-	autocmd BufRead *.desktop.in set encoding=UTF-8
 	autocmd BufRead *.d set ts=2 sw=2 et cindent
 	autocmd BufRead *.cs set ts=2 sw=2 et cindent ai
 	autocmd BufRead *.rb set ts=2 sw=2 et ai
@@ -86,14 +113,12 @@ if has("autocmd")
 	autocmd BufRead *.hpp set ts=2 sw=2 et cindent
 	autocmd BufRead *.cc set ts=2 sw=2 et cindent
 	autocmd BufRead *.cpp set ts=2 sw=2 et cindent
-	autocmd BufRead acxosd.conf set ts=2 sw=2 et encoding=utf-8
 	autocmd BufRead *.java set ts=2 sw=2 et cindent encoding=utf-8
 	autocmd BufRead *.m4 set ts=2 sw=2 et
 	autocmd BufRead *.ac set ts=2 sw=2 et
 	autocmd BufRead *.tex set ts=2 sw=2 et
 	autocmd BufRead *.html set ts=2 sw=2 et
 	autocmd BufRead *.xml set ts=2 sw=2 et encoding=utf-8
-	autocmd BufRead *grace2d.conf set ts=2 sw=2 et encoding=utf-8
 	autocmd BufRead *.po set encoding=UTF-8
 	autocmd BufRead *.properties set encoding=iso8859-1
 	autocmd BufRead *.ml set syntax=ocaml ts=2 sw=2 et
@@ -105,18 +130,5 @@ endif
 " lower the VIM update timer
 set updatetime=1000
 
-"
-" LLVM stuff
-"
-augroup filetype
-  au! BufRead,BufNewFile *.ll     set filetype=llvm
-  au! BufRead,BufNewFile *.td     set filetype=tablegen
-augroup END
-au Syntax llvm     so ~/.vim/syntax/llvm.vim
-au Syntax tablegen so ~/.vim/syntax/tablegen.vim
-
 " OMLet
 let omlet_indent_let=0
-
-" CommandT
-map <C-t> :CommandT<CR>
