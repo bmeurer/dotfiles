@@ -70,7 +70,4 @@
 [apply]
 	whitespace = nowarn
 
-[push]
-	default = upstream
-
 # vim:set ft=gitconfig noet sw=8 ts=8:
