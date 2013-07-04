@@ -45,6 +45,8 @@ nnoremap ; :
 " Clear highlighted searches
 nmap <silent> <Leader>/ :nohlsearch<CR>
 
+nmap <silent> <Leader>g :noautocmd execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+
 "--}}}
 
 " Sync if idle for atleast one minute or 250 chars entered
