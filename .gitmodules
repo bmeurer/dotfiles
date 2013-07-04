@@ -10,3 +10,6 @@
 [submodule "vim/vim.symlink/bundle/vim-commentary"]
 	path = vim/vim.symlink/bundle/vim-commentary
 	url = git://github.com/tpope/vim-commentary.git
+[submodule "vim/vim.symlink/bundle/command-t"]
+	path = vim/vim.symlink/bundle/command-t
+	url = git://git.wincent.com/command-t.git

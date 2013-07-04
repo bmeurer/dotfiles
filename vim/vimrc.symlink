@@ -117,3 +117,6 @@ au Syntax tablegen so ~/.vim/syntax/tablegen.vim
 
 " OMLet
 let omlet_indent_let=0
+
+" CommandT
+map <C-t> :CommandT<CR>
