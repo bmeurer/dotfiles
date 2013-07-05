@@ -18,8 +18,7 @@
 colorscheme solarized
 set background=dark
 
-set guioptions-=t
-set guioptions-=T
+set guioptions=aem
 set toolbariconsize=tiny
 set lines=40
 set columns=80
