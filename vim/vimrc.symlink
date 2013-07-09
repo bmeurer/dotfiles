@@ -33,7 +33,7 @@ endif
 let mapleader=","
 
 " CommandT plugin
-nmap <silent> <Leader>t :CommandT<CR>
+nmap <silent> <Leader>t :CommandTFlush<CR>:CommandT<CR>
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <Leader>ev :e $MYVIMRC<CR>
