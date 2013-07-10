@@ -57,6 +57,7 @@
 	compression = 9
 	fsyncobjectfiles = yes
 	excludesfile = ~/.gitignore
+	editor = vim
 
 [github]
 	user = bmeurer
