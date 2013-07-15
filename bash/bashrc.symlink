@@ -46,6 +46,10 @@ HISTCONTROL="erasedups"
 HISTSIZE="10000"
 HISTFILESIZE="${HISTSIZE}"
 
+# Set editor to vim
+EDITOR=vim
+export EDITOR
+
 # MacPorts related paths
 if [[ -d /opt/local ]]; then
 	MANPATH="/opt/local/share/man:${MANPATH}"
