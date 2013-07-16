@@ -58,6 +58,9 @@
 	fsyncobjectfiles = yes
 	excludesfile = ~/.gitignore
 	editor = vim
+	autocrlf = false
+	filemode = false
+	deltaBaseCacheLimit = 1G
 
 [github]
 	user = bmeurer
