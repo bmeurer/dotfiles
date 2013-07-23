@@ -20,11 +20,11 @@ call pathogen#infect()
 call pathogen#helptags()
 "--}}}
 
-"--{{{ Taglist
-"-- use MacPorts exuberant-ctags
-if filereadable('/opt/local/bin/ctags')
-  let Tlist_Ctags_Cmd = '/opt/local/bin/ctags'
-endif
+"--{{{ GNU Global
+let GtagsCscope_Auto_Load = 1
+let GtagsCscope_Auto_Map = 1 " Use the default key/mouse mapping
+let GtagsCscope_Quiet = 1
+set cscopetag " Use 'vim -t ', ':tag' and '<C-]>'
 "--}}}
 
 "--{{{ Shortcut mappings
