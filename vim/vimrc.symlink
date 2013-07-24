@@ -86,16 +86,8 @@ set ruler
 "set rulerformat=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 
 " colors
-hi Normal	guibg=White guifg=Black
-hi Comment	term=bold ctermfg=DarkBlue gui=NONE guibg=White guifg=DarkBlue
-hi Constant	term=bold ctermfg=Blue gui=bold guibg=White guifg=Blue
-hi Statement	term=bold ctermfg=DarkRed gui=bold guibg=White guifg=DarkRed
-hi Type		term=bold ctermfg=DarkRed gui=bold guibg=White guifg=DarkRed
-hi PreProc	term=NONE ctermfg=Magenta gui=bold guibg=White guifg=Magenta
-hi Error	term=reverse ctermbg=DarkRed gui=italic guibg=Red guifg=White
-hi String	term=bold ctermfg=DarkGreen gui=bold guibg=White guifg=DarkGreen
-hi Visual	term=reverse ctermfg=DarkBlue gui=bold guibg=Blue guifg=White
-hi Cursor	term=NONE gui=NONE guibg=Green guifg=Black
+colorscheme solarized
+set background=dark
 
 " folding
 set fen
