@@ -49,6 +49,10 @@ nmap <silent> <Leader>g :noautocmd execute "lvimgrep /" . expand("<cword>") . "/
 
 "--}}}
 
+"--{{{ Statusline
+set statusline=%F\ %m\ %{fugitive#statusline()}\ %y%=%l,%c\ %P
+"--}}}
+
 " Sync if idle for atleast one minute or 250 chars entered
 set updatetime=60000
 set updatecount=250
