@@ -61,6 +61,12 @@ bind -r C-l select-window -t :+
 # Center the window list
 set -g status-justify centre
 
+# Enable mouse support
+set -g mode-mouse on
+set -g mouse-select-pane on
+set -g mouse-resize-pane on
+set -g mouse-select-window on
+
 
 #### COLOUR (Solarized dark)
 
