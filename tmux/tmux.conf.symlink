@@ -1,0 +1,95 @@
+# .tmux.conf - tmux configuration file.
+#
+# Copyright 2013 Benedikt Meurer
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+# Use Ctrl-s instead of Ctrl-b (used by VIM)
+set -g prefix C-s
+
+# Lower the default delay
+set -sg escape-time 1
+
+# Window and pane index should start at 1
+set -g base-index 1
+set -g pane-base-index 1
+
+# Of course we prefer VI mode
+setw -g mode-keys vi
+
+# Set the default terminal mode to 256color
+set -g default-terminal "screen-256color"
+
+# Enable activity alerts
+setw -g monitor-activity on
+set -g visual-activity on
+
+# Reload configuration using PREFIX r
+bind r source-file ~/.tmux.conf \; display "Reloaded!"
+
+# PREFIX | splits horizontally, PREFIX - splits vertically
+bind | split-window -h
+bind - split-window -v
+
+# Use VI movement keys
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# Uppercase movement keys for resizing
+bind -r H resize-pane -L
+bind -r J resize-pane -D
+bind -r K resize-pane -U
+bind -r L resize-pane -R
+
+# Use PREFIX C-h and PREFIX C-l to cycle through windows
+bind -r C-h select-window -t :-
+bind -r C-l select-window -t :+
+
+# Center the window list
+set -g status-justify centre
+
+
+#### COLOUR (Solarized dark)
+
+# default statusbar colors
+set-option -g status-bg black #base02
+set-option -g status-fg yellow #yellow
+set-option -g status-attr default
+
+# default window title colors
+set-window-option -g window-status-fg brightblue #base0
+set-window-option -g window-status-bg default
+#set-window-option -g window-status-attr dim
+
+# active window title colors
+set-window-option -g window-status-current-fg brightred #orange
+set-window-option -g window-status-current-bg default
+#set-window-option -g window-status-current-attr bright
+
+# pane border
+set-option -g pane-border-fg black #base02
+set-option -g pane-active-border-fg brightgreen #base01
+
+# message text
+set-option -g message-bg black #base02
+set-option -g message-fg brightred #orange
+
+# pane number display
+set-option -g display-panes-active-colour blue #blue
+set-option -g display-panes-colour brightred #orange
+
+# clock
+set-window-option -g clock-mode-colour green #green
