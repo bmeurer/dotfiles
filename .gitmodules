@@ -10,9 +10,6 @@
 [submodule "vim/vim.symlink/bundle/vim-commentary"]
 	path = vim/vim.symlink/bundle/vim-commentary
 	url = git://github.com/tpope/vim-commentary.git
-[submodule "vim/vim.symlink/bundle/command-t"]
-	path = vim/vim.symlink/bundle/command-t
-	url = git://git.wincent.com/command-t.git
 [submodule "vim/vim.symlink/bundle/vim-unimpaired"]
 	path = vim/vim.symlink/bundle/vim-unimpaired
 	url = git://github.com/tpope/vim-unimpaired.git
@@ -22,3 +19,6 @@
 [submodule "vim/vim.symlink/bundle/vim-tmux-navigator"]
 	path = vim/vim.symlink/bundle/vim-tmux-navigator
 	url = git://github.com/christoomey/vim-tmux-navigator.git
+[submodule "vim/vim.symlink/bundle/ctrlp.vim"]
+	path = vim/vim.symlink/bundle/ctrlp.vim
+	url = git://github.com/kien/ctrlp.vim.git
