@@ -58,9 +58,9 @@ if [[ -d /opt/local ]]; then
 	export MANPATH PKG_CONFIG_PATH
 fi
 
-# depot_tools related paths
+# depot_tools must be first in $PATH
 if [[ -d "${HOME}/Applications/depot_tools" ]]; then
-	PATH="${PATH}:${HOME}/Applications/depot_tools"
+	PATH="${HOME}/Applications/depot_tools:${PATH}"
 fi
 
 # Enable various useful bash aliases
