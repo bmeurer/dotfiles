@@ -16,10 +16,14 @@
 #
 
 # Enable color support in ls
-if [ -x /usr/bin/dircolors ]; then
+if [[ -x /usr/bin/dircolors ]]; then
 	# Probably Linux or some GNUish
-	eval "`/usr/bin/dircolors -b`"
+	eval "`/usr/bin/dircolors -b ${HOME}/.dircolors`"
 	alias ls='ls --color=auto'
+elif [[ -x /opt/local/bin/gdircolors ]]; then
+	# coreutils from MacPorts on OS X
+	eval "`/opt/local/bin/gdircolors -b ${HOME}/.dircolors`"
+	alias ls='/opt/local/bin/gls --color=auto'
 else
 	# Probably OS X or some BSDish
 	alias ls='ls -G'
