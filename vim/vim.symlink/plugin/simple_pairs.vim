@@ -5,7 +5,7 @@ endif
 
 python << endpython
 import vim
-pairs = {'(': ')', '[': ']', '{': '}', '"': '"', "'": "'"}
+pairs = {'(': ')', '[': ']', '{': '}'}
 def getNextChar():
     'returns next char or None, for end of line'
     (row, col) = vim.current.window.cursor
