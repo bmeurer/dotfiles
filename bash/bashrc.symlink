@@ -85,5 +85,12 @@ if [[ -n "${ncpu}" ]]; then
 fi
 unset ncpu
 
+# Setup colors for (g)ls
+if [[ -x /usr/bin/dircolors ]]; then
+	eval `/usr/bin/dircolors "${HOME}/.dircolors"`
+elif [[ -x /opt/local/bin/gdircolors ]]; then
+	eval `/opt/local/bin/gdircolors "${HOME}/.dircolors"`
+fi
+
 # Set PATH so it includes user's private bin
 PATH="${HOME}/bin:${PATH}"
