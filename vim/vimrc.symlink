@@ -83,6 +83,8 @@ set title " change the terminal's title
 set history=10000 " remember more commands and search history
 set undolevels=10000 " use many muchos levels of undo
 set formatoptions=croql
+set autowrite
+set autowriteall
 syntax on
 
 " hilight matching parentesis
