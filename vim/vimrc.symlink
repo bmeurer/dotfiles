@@ -33,7 +33,7 @@ set cscopetag " Use 'vim -t ', ':tag' and '<C-]>'
 let mapleader=","
 
 " CommandT plugin
-nmap <silent> <c-x><c-f> :CommandTFlush<CR>:CommandT<CR>
+nmap <silent> <c-c> :CommandTFlush<CR>:CommandT<CR>
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <Leader>ev :e $MYVIMRC<CR>
