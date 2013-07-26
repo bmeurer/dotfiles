@@ -59,8 +59,22 @@ set statusline=%F\ %m\ %{fugitive#statusline()}\ %y%=%l,%c\ %P
 
 "--}}}
 
+"--{{{ Trailing whitespace
+
+" Delete trailing white space on save, useful for C/C++ ;)
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+autocmd BufWrite *.c :call DeleteTrailingWS()
+autocmd BufWrite *.cc :call DeleteTrailingWS()
+autocmd BufWrite *.h :call DeleteTrailingWS()
+
 " Highlight trailing whitespace
 match ErrorMsg '\s\+$'
+
+"--}}}
 
 " Sync if idle for atleast one minute or 250 chars entered
 set updatetime=60000
