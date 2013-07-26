@@ -50,7 +50,13 @@ nmap <silent> <Leader>g :noautocmd execute "lvimgrep /" . expand("<cword>") . "/
 "--}}}
 
 "--{{{ Statusline
+
+" Always show the status line
+set laststatus=2
+
+" Format the status line
 set statusline=%F\ %m\ %{fugitive#statusline()}\ %y%=%l,%c\ %P
+
 "--}}}
 
 " Highlight trailing whitespace
@@ -101,6 +107,14 @@ set background=dark
 " folding
 set fen
 set fdm=marker
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+" Remember info about open buffers on close
+set viminfo^=%
 
 if has("autocmd")
 	autocmd BufRead *.d set ts=2 sw=2 et cindent
