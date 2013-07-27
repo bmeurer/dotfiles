@@ -54,8 +54,8 @@ nmap <silent> <Leader>g :noautocmd execute "lvimgrep /" . expand("<cword>") . "/
 " Always show the status line
 set laststatus=2
 
-" Format the status line
-set statusline=%F\ %m\ %{fugitive#statusline()}\ %y%=%l,%c\ %P
+" Use fancy new symbols
+let g:Powerline_symbols = 'fancy'
 
 "--}}}
 
