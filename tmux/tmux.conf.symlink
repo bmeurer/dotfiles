@@ -38,6 +38,9 @@ set -g default-shell /bin/zsh
 setw -g monitor-activity on
 set -g visual-activity on
 
+# Disallow automatic window renaming
+setw -g allow-rename off
+
 # Reload configuration using PREFIX r
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
