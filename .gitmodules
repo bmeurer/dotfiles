@@ -24,4 +24,4 @@
 	url = git://github.com/christoomey/vim-tmux-navigator.git
 [submodule "zsh/oh-my-zsh.symlink"]
 	path = zsh/oh-my-zsh.symlink
-	url = git://github.com/robbyrussell/oh-my-zsh.git
+	url = git@github.com:bmeurer/oh-my-zsh.git
