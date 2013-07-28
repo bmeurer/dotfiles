@@ -1,0 +1,52 @@
+# .gdbinit - GDB configuration file
+#
+# Copyright 2013 Benedikt Meurer
+# Copyright 2012 Daniel Clifford
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+# Helpful V8 GDB macros from Danno
+define job
+print ((v8::internal::HeapObject*)($arg0))->Print()
+end
+document job
+Print a v8 JavaScript object
+Usage: job tagged_ptr
+end
+
+define jco
+job (v8::internal::Isolate::Current()->heap()->FindCodeObject((v8::internal::Address)$arg0))
+end
+document jco
+Print a v8 Code object from an internal code address
+Usage: jco pc
+end
+
+define jst
+print v8::internal::Isolate::Current()->PrintStack()
+end
+document jst
+Print the current JavaScript stack trace
+Usage: jst
+end
+
+define floattop
+print ($fstat & 0x3800) >> 1
+end
+document floattop
+Print the floating point register that is the top of the stack
+Usage floattop
+end
+
+# vim:set ft=gdb:
