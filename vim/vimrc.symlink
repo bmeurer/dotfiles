@@ -39,9 +39,6 @@ nmap <silent> <c-c> :CommandTFlush<CR>:CommandT<CR>
 nmap <silent> <Leader>ev :e $MYVIMRC<CR>
 nmap <silent> <Leader>sv :so $MYVIMRC<CR>
 
-" Strip off two full keystrokes from almost every Vim command
-nnoremap ; :
-
 " Clear highlighted searches
 nmap <silent> <Leader>/ :nohlsearch<CR>
 
