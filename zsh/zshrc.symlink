@@ -59,7 +59,7 @@ plugins=(colored-man colorize debian git macports osx svn tmux)
 # Enable oh-my-zsh
 source "${ZSH}/oh-my-zsh.sh"
 
-# Enable various useful bash aliases
-source "${DOTFILES}/bash/bash.aliases"
+# Enable various useful zsh aliases
+source "${DOTFILES}/zsh/zsh.aliases"
 
 # vim:set ft=zsh:
