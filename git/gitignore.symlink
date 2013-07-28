@@ -42,3 +42,8 @@
 ## Subversion directories
 ##
 .svn
+
+##
+## Python files
+##
+*.pyc
