@@ -54,6 +54,10 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
+# Use VIM selection keys
+bind-key -t vi-copy 'v' begin-selection
+bind-key -t vi-copy 'y' copy-selection
+
 # Uppercase movement keys for resizing
 bind -r H resize-pane -L
 bind -r J resize-pane -D
