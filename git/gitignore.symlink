@@ -47,3 +47,8 @@
 ## Python files
 ##
 *.pyc
+
+##
+## VIM help tags
+##
+doc/tags
