@@ -21,6 +21,10 @@
 echo "Initializing git submodules..."
 git submodule init || exit $?
 
+# Synchronize the Git submodules
+echo "Synchonizing git submodules..."
+git submodule sync || exit $?
+
 # Update the Git submodules
 echo "Updating git submodules..."
 git submodule update || exit $?
