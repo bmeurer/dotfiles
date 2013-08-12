@@ -19,9 +19,6 @@
 [submodule "vim/vim.symlink/bundle/vim-tmux-navigator"]
 	path = vim/vim.symlink/bundle/vim-tmux-navigator
 	url = git://github.com/christoomey/vim-tmux-navigator.git
-[submodule "zsh/oh-my-zsh.symlink"]
-	path = zsh/oh-my-zsh.symlink
-	url = git@github.com:bmeurer/oh-my-zsh.git
 [submodule "vim/vim.symlink/bundle/vim-powerline"]
 	path = vim/vim.symlink/bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
@@ -31,3 +28,6 @@
 [submodule "vim/vim.symlink/bundle/vim-easymotion"]
 	path = vim/vim.symlink/bundle/vim-easymotion
 	url = git://github.com/Lokaltog/vim-easymotion
+[submodule "zsh/oh-my-zsh.symlink"]
+	path = zsh/oh-my-zsh.symlink
+	url = git://github.com/robbyrussell/oh-my-zsh
