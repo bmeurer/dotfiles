@@ -43,9 +43,11 @@ esac
 shopt -s checkwinsize
 
 # History settings
-HISTCONTROL="erasedups"
-HISTSIZE="10000"
-HISTFILESIZE="${HISTSIZE}"
+HISTCONTROL="ignoredups:erasedups"	# no duplicate entries
+HISTSIZE=100000				# big big history
+HISTFILESIZE="${HISTSIZE}"		# big big history
+shopt -s histappend			# append to history, don't overwrite i
+export HISTCONTROL HISTSIZE HISTFILESIZE
 
 # Set editor to vim
 EDITOR=vim
