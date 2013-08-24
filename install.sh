@@ -43,7 +43,3 @@ for SYMLINK in ${SYMLINKS}; do
 		ln -s "${PWD#${HOME}/}/${SYMLINK}" "${TARGET}" || exit 1
 	fi
 done
-
-# Update the fontconfig cache
-echo "Updating the fontconfig cache..."
-fc-cache -vf "${HOME}/.fonts" || exit $?
