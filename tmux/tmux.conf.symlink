@@ -31,8 +31,8 @@ setw -g mode-keys vi
 # Set the default terminal mode to 256color
 set -g default-terminal "screen-256color"
 
-# Set default shell to zsh
-set -g default-shell /bin/zsh
+# Set default shell to bash
+set -g default-shell /bin/bash
 
 # Enable activity alerts
 setw -g monitor-activity on
