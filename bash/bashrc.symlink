@@ -79,6 +79,9 @@ fi
 # Set MAKEFLAGS based on processor count
 if [[ -f /proc/cpuinfo ]]; then
 	ncpu="$(grep -c ^processor /proc/cpuinfo)"
+	if [[ ${ncpu} -eq 0 ]]; then
+		ncpu=1
+	fi
 else
 	ncpu="$(sysctl hw.ncpu | head -1 | grep -o '[0-9]*$')"
 fi
