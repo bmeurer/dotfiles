@@ -26,7 +26,7 @@ Usage: job tagged_ptr
 end
 
 define jco
-job (v8::internal::Isolate::Current()->heap()->FindCodeObject((v8::internal::Address)$arg0))
+job (v8::internal::Isolate::Current()->FindCodeObject((v8::internal::Address)$arg0))
 end
 document jco
 Print a v8 Code object from an internal code address
