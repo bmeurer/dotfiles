@@ -76,6 +76,12 @@ elif [[ -r /etc/bash_completion ]]; then
 	. /etc/bash_completion
 fi
 
+# Setup chromium development sandbox
+if [[ -x "/usr/local/sbin/chrome-devel-sandbox" ]]; then
+	CHROME_DEVEL_SANDBOX="/usr/local/sbin/chrome-devel-sandbox"
+	export CHROME_DEVEL_SANDBOX
+fi
+
 # Set MAKEFLAGS based on processor count
 if [[ -f /proc/cpuinfo ]]; then
 	ncpu="$(grep -c ^processor /proc/cpuinfo)"
