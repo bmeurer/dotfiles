@@ -71,11 +71,8 @@ bind -r C-l select-window -t :+
 # Center the window list
 set -g status-justify centre
 
-# Enable mouse support
-set -g mode-mouse on
-set -g mouse-select-pane on
-set -g mouse-resize-pane on
-set -g mouse-select-window on
+# Disable mouse support
+set -g mode-mouse off
 
 # Smart pane switching with awareness of vim splits
 bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-h) || tmux select-pane -L"
