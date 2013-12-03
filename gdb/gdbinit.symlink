@@ -34,7 +34,7 @@ Usage: jco pc
 end
 
 define jst
-print v8::internal::Isolate::Current()->PrintStack()
+print v8::internal::Isolate::Current()->PrintStack(stdout)
 end
 document jst
 Print the current JavaScript stack trace
