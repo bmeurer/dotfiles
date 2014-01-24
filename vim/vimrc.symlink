@@ -27,6 +27,10 @@ let GtagsCscope_Quiet = 1
 set cscopetag " Use 'vim -t ', ':tag' and '<C-]>'
 "--}}}
 
+"--{{{ YouCompleteMe
+let g:ycm_global_ycm_extra_conf = '~/.vim/v8.ycm_extra_conf.py'
+"--}}}
+"
 "--{{{ LustyJuggler
 
 " Display the key with the name of the buffer
@@ -56,6 +60,9 @@ nmap <silent> <Leader>sv :so $MYVIMRC<CR>
 nmap <silent> <Leader>/ :nohlsearch<CR>
 
 nmap <silent> <Leader>g :noautocmd execute "lvimgrep /" . expand("<cword>") . "/j **" <Bar> lw<CR>
+
+nmap <silent> <Leader>d :YcmCompleter GoToDeclaration<CR>
+nmap <silent> <Leader>D :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "--}}}
 

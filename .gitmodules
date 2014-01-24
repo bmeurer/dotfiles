@@ -28,3 +28,6 @@
 [submodule "vim/vim.symlink/bundle/vim-airline"]
 	path = vim/vim.symlink/bundle/vim-airline
 	url = git://github.com/bling/vim-airline
+[submodule "vim/vim.symlink/bundle/YouCompleteMe"]
+	path = vim/vim.symlink/bundle/YouCompleteMe
+	url = git://github.com/Valloric/YouCompleteMe.git
