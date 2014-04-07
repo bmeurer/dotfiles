@@ -85,6 +85,9 @@ let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 " searches.
 let g:EasyMotion_smartcase = 1
 
+" Type Space key to jump to first match.
+let g:EasyMotion_space_jump_first = 1
+
 "--}}}
 
 "--{{{ Statusline
