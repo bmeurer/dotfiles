@@ -95,8 +95,8 @@ let g:EasyMotion_space_jump_first = 1
 " Always show the status line
 set laststatus=2
 
-" Use solarized theme
-let g:airline_theme = 'solarized'
+" Use murmur theme
+let g:airline_theme = 'murmur'
 
 "--}}}
 
