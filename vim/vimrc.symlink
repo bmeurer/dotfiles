@@ -1,6 +1,6 @@
 " .vimrc - VI Improved configuration file
 "
-" Copyright 2001-2013 Benedikt Meurer
+" Copyright 2001-2014 Benedikt Meurer
 "
 " Licensed under the Apache License, Version 2.0 (the "License");
 " you may not use this file except in compliance with the License.
@@ -156,6 +156,7 @@ set ruler
 "set rulerformat=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 
 " colors
+set t_Co=256
 colorscheme solarized
 set background=dark
 
