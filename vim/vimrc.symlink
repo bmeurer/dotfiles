@@ -62,24 +62,8 @@ nmap <silent> <Leader>g :noautocmd execute "lvimgrep /" . expand("<cword>") . "/
 "--{{{ EasyMotion
 " See https://github.com/Lokaltog/vim-easymotion for details.
 
-" 1-character search motion.
-nmap s <Plug>(easymotion-s)
-
-" 2-character search motion.
-nmap t <Plug>(easymotion-s2)
-
-" n-character search motion.
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
-
-" Configure EasyMotion to avoid repetitive use of the h j k and l keys.
-map <Leader>h <Plug>(easymotion-linebackward)
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+" Keep cursor colum when JK motion
+let g:EasyMotion_startofline = 0
 
 " Make EasyMotion work similarly to Vim's smartcase option for global
 " searches.
