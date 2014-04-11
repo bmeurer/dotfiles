@@ -1,6 +1,6 @@
 # .gdbinit - GDB configuration file
 #
-# Copyright 2013 Benedikt Meurer
+# Copyright 2014 Benedikt Meurer
 # Copyright 2012 Daniel Clifford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,5 +48,9 @@ document floattop
 Print the floating point register that is the top of the stack
 Usage floattop
 end
+
+# Save command history in ~/.gdb_history
+set history filename ~/.gdb_history
+set history save
 
 # vim:set ft=gdb:
