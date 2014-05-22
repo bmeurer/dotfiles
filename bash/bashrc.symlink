@@ -82,6 +82,12 @@ if [[ -x "/usr/local/sbin/chrome-devel-sandbox" ]]; then
 	export CHROME_DEVEL_SANDBOX
 fi
 
+# Setup Android NDK
+if [[ -d "${HOME}/Applications/android-ndk-current" ]]; then
+	ANDROID_NDK_ROOT="${HOME}/Applications/android-ndk-current"
+	export ANDROID_NDK_ROOT
+fi
+
 # Set MAKEFLAGS based on processor count
 if [[ -f /proc/cpuinfo ]]; then
 	ncpu="$(grep -c ^processor /proc/cpuinfo)"
