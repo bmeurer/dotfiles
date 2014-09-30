@@ -45,9 +45,6 @@ noremap <silent> Q :LustyJuggler<CR>
 " Change map leader from \ to ,
 let mapleader=","
 
-" CommandT plugin
-nmap <silent> <c-c> :CommandTFlush<CR>:CommandT<CR>
-
 " Quickly edit/reload the vimrc file
 nmap <silent> <Leader>ev :e $MYVIMRC<CR>
 nmap <silent> <Leader>sv :so $MYVIMRC<CR>
@@ -56,6 +53,19 @@ nmap <silent> <Leader>sv :so $MYVIMRC<CR>
 nmap <silent> <Leader>/ :nohlsearch<CR>
 
 nmap <silent> <Leader>g :noautocmd execute "lvimgrep /" . expand("<cword>") . "/j **" <Bar> lw<CR>
+
+"--}}}
+
+"--{{{ ctrlp.vim
+
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_user_command = {
+	\ 'types': {
+		\ 1: ['.git', 'cd %s && git ls-files'],
+		\ 2: ['.hg', 'hg --cwd %s locate -I .'],
+		\ },
+	\ 'fallback': 'find %s -type f'
+	\ }
 
 "--}}}
 
