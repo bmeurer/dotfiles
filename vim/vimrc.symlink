@@ -111,6 +111,11 @@ match ErrorMsg '\s\+$'
 
 "--}}}
 
+"--{{{ clang-format.py
+nmap <C-I> :pyf ~/.vim/bin/clang-format.py<CR>
+imap <C-I> <ESC>:pyf ~/.vim/bin/clang-format.py<CR>i
+"--}}}
+
 " Sync if idle for atleast one minute or 250 chars entered
 set updatetime=60000
 set updatecount=250
