@@ -112,7 +112,7 @@ match ErrorMsg '\s\+$'
 "--}}}
 
 "--{{{ clang-format.py
-nmap <C-I> :pyf ~/.vim/bin/clang-format.py<CR>
+map <C-I> :pyf ~/.vim/bin/clang-format.py<CR>
 imap <C-I> <ESC>:pyf ~/.vim/bin/clang-format.py<CR>i
 "--}}}
 
