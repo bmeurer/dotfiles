@@ -81,3 +81,5 @@
 	default = current
 
 # vim:set ft=gitconfig noet sw=8 ts=8:
+[branch]
+	autosetuprebase = always
