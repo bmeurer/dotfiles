@@ -1,6 +1,6 @@
 # .bashrc - Interactive bash configuration file
 #
-# Copyright 2001-2012 Benedikt Meurer
+# Copyright 2001-2014 Benedikt Meurer
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -41,6 +41,15 @@ esac
 
 # Make bash check its window size after a process completes
 shopt -s checkwinsize
+
+# repeat N CMD runs CMD N times.
+function repeat() {
+	number=$1
+	shift
+	for n in $(seq $number); do
+		$@
+	done
+}
 
 # History settings
 HISTCONTROL="ignoredups:erasedups"	# no duplicate entries
