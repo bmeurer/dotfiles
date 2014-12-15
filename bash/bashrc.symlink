@@ -70,6 +70,10 @@ if [[ -x $(type -P clang) ]] && [[ -x $(type -P clang++) ]]; then
 	export CC CXX LINK
 fi
 
+# Default generator for gyp.
+GYP_GENERATORS=ninja
+export GYP_GENERATORS
+
 # MacPorts related paths
 if [[ -d /opt/local ]]; then
 	MANPATH="/opt/local/share/man:${MANPATH}"
