@@ -74,6 +74,10 @@ fi
 GYP_GENERATORS=ninja
 export GYP_GENERATORS
 
+# Default settings for gyp.
+GYP_DEFINES="v8_optimized_debug=2"
+export GYP_DEFINES
+
 # MacPorts related paths
 if [[ -d /opt/local ]]; then
 	MANPATH="/opt/local/share/man:${MANPATH}"
