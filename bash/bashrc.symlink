@@ -75,8 +75,14 @@ GYP_GENERATORS=ninja
 export GYP_GENERATORS
 
 # Default settings for gyp.
-GYP_DEFINES="v8_optimized_debug=2"
+GYP_DEFINES="v8_optimized_debug=1"
 export GYP_DEFINES
+
+# goma support.
+if [[ -d "${HOME}/Applications/goma" ]]; then
+	GYP_DEFINES="${GYP_DEFINES} use_goma=1 gomadir=\"${HOME}/Applications/goma\""
+	export GYP_DEFINES
+fi
 
 # MacPorts related paths
 if [[ -d /opt/local ]]; then
