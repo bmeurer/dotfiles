@@ -62,14 +62,6 @@ export HISTCONTROL HISTSIZE HISTFILESIZE
 EDITOR=vim
 export EDITOR
 
-# Prefer clang
-if [[ -x $(type -P clang) ]] && [[ -x $(type -P clang++) ]]; then
-	CC="clang"
-	CXX="clang++"
-	LINK="${CXX}"
-	export CC CXX LINK
-fi
-
 # Default generator for gyp.
 GYP_GENERATORS=ninja
 export GYP_GENERATORS
