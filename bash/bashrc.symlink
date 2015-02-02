@@ -58,6 +58,10 @@ HISTFILESIZE="${HISTSIZE}"		# big big history
 shopt -s histappend			# append to history, don't overwrite i
 export HISTCONTROL HISTSIZE HISTFILESIZE
 
+# Default grep settings.
+GREP_OPTIONS="--color=auto --recursive"
+export GREP_OPTIONS
+
 # Set editor to vim
 EDITOR=vim
 export EDITOR
