@@ -231,3 +231,8 @@ augroup checktime
         autocmd CursorMovedI    * silent! checktime
     endif
 augroup END
+
+" Site-local vim settings (i.e. at Google).
+if filereadable(glob("~/.vimrc.local"))
+	source ~/.vimrc.local
+endif
