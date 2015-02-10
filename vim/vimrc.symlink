@@ -1,6 +1,6 @@
 " .vimrc - VI Improved configuration file
 "
-" Copyright 2001-2013 Benedikt Meurer
+" Copyright 2001-2015 Benedikt Meurer
 "
 " Licensed under the Apache License, Version 2.0 (the "License");
 " you may not use this file except in compliance with the License.
@@ -114,6 +114,14 @@ match ErrorMsg '\s\+$'
 "--{{{ clang-format.py
 map <C-I> :pyf ~/.vim/bin/clang-format.py<CR>
 imap <C-I> <ESC>:pyf ~/.vim/bin/clang-format.py<CR>i
+"--}}}
+
+"--{{{ syntastic
+let g:syntastic_auto_loc_list=0
+"--}}}
+
+"--{{{ Omnicomplete
+set completeopt-=preview
 "--}}}
 
 " Sync if idle for atleast one minute or 250 chars entered
@@ -231,3 +239,8 @@ augroup checktime
         autocmd CursorMovedI    * silent! checktime
     endif
 augroup END
+
+" Site-local vim settings (i.e. at Google).
+if filereadable(glob("~/.vimrc.local")) 
+	source ~/.vimrc.local
+endif
