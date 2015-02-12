@@ -42,9 +42,6 @@ noremap <silent> Q :LustyJuggler<CR>
 
 "--{{{ Shortcut mappings
 
-" Change map leader from \ to ,
-let mapleader=","
-
 " Quickly edit/reload the vimrc file
 nmap <silent> <Leader>ev :e $MYVIMRC<CR>
 nmap <silent> <Leader>sv :so $MYVIMRC<CR>
@@ -53,6 +50,20 @@ nmap <silent> <Leader>sv :so $MYVIMRC<CR>
 nmap <silent> <Leader>/ :nohlsearch<CR>
 
 nmap <silent> <Leader>g :noautocmd execute "lvimgrep /" . expand("<cword>") . "/j **" <Bar> lw<CR>
+
+"--}}}
+
+"--{{{ YouCompleteMe
+
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_min_num_identifier_candidate_chars = 4
+let g:ycm_extra_conf_globlist = ['~/Projects/v8/.ycm_extra_conf.py']
+let g:ycm_filetype_specific_completion_to_disable = {'javascript': 1}
+
+nnoremap <leader>y :YcmForceCompileAndDiagnostics<CR>
+nnoremap <leader>pg :YcmCompleter GoTo<CR>
+nnoremap <leader>pd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>pc :YcmCompleter GoToDeclaration<CR>
 
 "--}}}
 
