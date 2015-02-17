@@ -1,0 +1,22 @@
+snippet copyright
+// Copyright ${1:`date +%Y`} the ${2:V8 project authors}. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+$0
+endsnippet
+
+snippet namespace
+namespace $1 {
+$0
+}  // namespace $1
+endsnippet
+
+snippet once
+#ifndef $1
+#define $1
+
+$0
+
+#endif  // $1
+endsnippet
