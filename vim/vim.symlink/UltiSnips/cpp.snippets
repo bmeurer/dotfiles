@@ -6,7 +6,7 @@ snippet copyright
 $0
 endsnippet
 
-snippet namespace
+snippet ns
 namespace $1 {
 $0
 }  // namespace $1
@@ -19,4 +19,22 @@ snippet once
 $0
 
 #endif  // $1
+endsnippet
+
+snippet t "TEST() macro" b
+TEST($1, $2) {
+  $0
+}
+endsnippet
+
+snippet tf "TEST_F() macro" b
+TEST_F($1, $2) {
+  $0
+}
+endsnippet
+
+snippet tp "TEST_P() macro" b
+TEST_P($1, $2) {
+  $0
+}
 endsnippet
