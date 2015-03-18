@@ -25,6 +25,7 @@
 	br = branch -v
 	ci = commit -v
 	co = checkout
+	cr-update = !git pull && gclient sync
 	dc = diff --cached
 	ff = merge --ff-only
 	fix = commit -a --amend -C HEAD
