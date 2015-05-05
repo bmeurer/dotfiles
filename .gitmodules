@@ -37,3 +37,6 @@
 [submodule "vim/vim.symlink/bundle/ultisnips"]
 	path = vim/vim.symlink/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
+[submodule "vim/vim.symlink/bundle/ListToggle"]
+	path = vim/vim.symlink/bundle/ListToggle
+	url = https://github.com/Valloric/ListToggle
