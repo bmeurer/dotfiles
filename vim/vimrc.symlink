@@ -149,6 +149,15 @@ map <C-I> :pyf ~/.vim/bin/clang-format.py<CR>
 imap <C-I> <ESC>:pyf ~/.vim/bin/clang-format.py<CR>i
 "--}}}
 
+"--{{{ fugitive.vim
+
+" Each time you open a git object using fugitive it creates a new buffer. This
+" means that your buffer listing can quickly become swamped with fugitive
+" buffers.Here’s an autocommand that prevents this from becomming an issue:
+autocmd BufReadPost fugitive://* set bufhidden=delete
+
+"--}}}
+
 " Sync if idle for atleast one minute or 250 chars entered
 set updatetime=60000
 set updatecount=250
