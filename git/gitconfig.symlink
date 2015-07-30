@@ -44,7 +44,6 @@
 	sf = svn fetch
 	sr = svn rebase
 	st = status
-	sync = "!f() { echo Syncing $1 with master && git checkout master && git pull && git checkout $1 && git rebase master; }; f"
 
 [color]
 	diff = auto
@@ -82,6 +81,7 @@
 [push]
 	default = current
 
-# vim:set ft=gitconfig noet sw=8 ts=8:
 [branch]
 	autosetuprebase = always
+
+# vim:set ft=gitconfig noet sw=8 ts=8:
