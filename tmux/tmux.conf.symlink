@@ -15,6 +15,9 @@
 # limitations under the License.
 #
 
+# Bump scrollback history limit.
+set-option -g history-limit 200000
+
 # Use Ctrl-s instead of Ctrl-b (used by VIM)
 set -g prefix C-s
 
