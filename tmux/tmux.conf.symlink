@@ -85,15 +85,15 @@ bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iqE 
 bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys 'C-\\') || tmux select-pane -l"
 
 
-#### COLOUR (Solarized dark)
+#### COLOUR (Solarized light)
 
 # default statusbar colors
-set-option -g status-bg black #base02
+set-option -g status-bg white #base2
 set-option -g status-fg yellow #yellow
 set-option -g status-attr default
 
 # default window title colors
-set-window-option -g window-status-fg brightblue #base0
+set-window-option -g window-status-fg brightyellow #base00
 set-window-option -g window-status-bg default
 #set-window-option -g window-status-attr dim
 
@@ -103,11 +103,11 @@ set-window-option -g window-status-current-bg default
 #set-window-option -g window-status-current-attr bright
 
 # pane border
-set-option -g pane-border-fg black #base02
-set-option -g pane-active-border-fg brightgreen #base01
+set-option -g pane-border-fg white #base2
+set-option -g pane-active-border-fg brightcyan #base1
 
 # message text
-set-option -g message-bg black #base02
+set-option -g message-bg white #base2
 set-option -g message-fg brightred #orange
 
 # pane number display
@@ -116,3 +116,6 @@ set-option -g display-panes-colour brightred #orange
 
 # clock
 set-window-option -g clock-mode-colour green #green
+
+# bell
+set-window-option -g window-status-bell-style fg=white,bg=red #base2, red

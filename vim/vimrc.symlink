@@ -198,7 +198,7 @@ set ruler
 
 " colors
 colorscheme solarized
-set background=dark
+set background=light
 
 " folding
 set fen
