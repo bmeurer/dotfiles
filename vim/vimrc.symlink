@@ -197,7 +197,8 @@ set ruler
 "set rulerformat=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 
 " colors
-colorscheme peachpuff
+colorscheme solarized
+set background=light
 
 " folding
 set fen
