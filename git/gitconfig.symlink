@@ -84,4 +84,7 @@
 [branch]
 	autosetuprebase = always
 
+[http]
+	cookiefile = /Users/bmeurer/.gitcookies
+
 # vim:set ft=gitconfig noet sw=8 ts=8:
