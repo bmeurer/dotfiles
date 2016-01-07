@@ -84,6 +84,13 @@ if [[ -d "${HOME}/Applications/goma" ]]; then
 	export GYP_DEFINES
 fi
 
+# node related paths.
+if [[ -d "${HOME}/Applications/node" ]]; then
+	MANPATH="${HOME}/Applications/node/share/man:${MANPATH}"
+	PATH="${HOME}/Applications/node/bin:${PATH}"
+	export MANPATH PATH
+fi
+
 # MacPorts related paths
 if [[ -d /opt/local ]]; then
 	MANPATH="/opt/local/share/man:${MANPATH}"
