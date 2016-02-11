@@ -1,6 +1,6 @@
 # bash.aliases - Various useful bash aliases
 #
-# Copyright 2001-2013 Benedikt Meurer
+# Copyright 2001-2016 Benedikt Meurer
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -40,6 +40,10 @@ alias ci='git ci'
 alias cia='git ci -a'
 alias co='git co'
 alias st='git st'
+
+# Handy aliases for ninja
+alias nrel='ninja -C out/Release '
+alias ndbg='ninja -C out/Debug '
 
 # Shortcuts for Cocoa applications
 if [[ "${OSTYPE}" =~ "darwin" ]]; then
