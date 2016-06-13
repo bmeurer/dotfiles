@@ -66,6 +66,9 @@
 	filemode = false
 	deltaBaseCacheLimit = 1G
 
+[depot-tools]
+	branch-limit = 256
+
 [github]
 	user = bmeurer
 
