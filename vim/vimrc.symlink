@@ -122,6 +122,9 @@ let g:EasyMotion_space_jump_first = 1
 " Always show the status line
 set laststatus=2
 
+" Use powerline fonts
+let g:airline_powerline_fonts = 1
+
 " Use solarized theme
 let g:airline_theme = 'solarized'
 
