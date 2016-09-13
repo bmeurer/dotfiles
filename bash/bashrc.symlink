@@ -80,8 +80,9 @@ export GYP_DEFINES
 
 # goma support.
 if [[ -d "${HOME}/Applications/goma" ]]; then
-	GYP_DEFINES="${GYP_DEFINES} use_goma=1 gomadir=\"${HOME}/Applications/goma\""
-	export GYP_DEFINES
+	GOMA_DIR="${HOME}/Applications/goma"
+	GYP_DEFINES="${GYP_DEFINES} use_goma=1 gomadir=\"${GOMA_DIR}\""
+	export GOMA_DIR GYP_DEFINES
 fi
 
 # node related paths.
