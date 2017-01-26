@@ -31,7 +31,8 @@
 	fix = commit -a --amend -C HEAD
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-	nb = new-branch
+	mb = map-branches -vvv
+	nb = new-branch --upstream-current
 	prune-all = !git remote | xargs -n 1 git remote prune
 	show-graph = log --graph --abbrev-commit --pretty=oneline
 	show-merged = branch -a --merged
