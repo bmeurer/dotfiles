@@ -32,7 +32,7 @@
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	mb = map-branches -vvv
-	nb = new-branch --upstream-current
+	nb = new-branch
 	prune-all = !git remote | xargs -n 1 git remote prune
 	show-graph = log --graph --abbrev-commit --pretty=oneline
 	show-merged = branch -a --merged
