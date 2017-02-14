@@ -85,6 +85,12 @@ if [[ -d "${HOME}/Applications/goma" ]]; then
 	export GOMA_DIR GYP_DEFINES
 fi
 
+# d8 related paths.
+if [[ -d "${HOME}/Projects/v8/out/Release" ]]; then
+	D8_PATH="${HOME}/Projects/v8/out/Release"
+	export D8_PATH
+fi
+
 # node related paths.
 if [[ -d "${HOME}/Applications/node" ]]; then
 	MANPATH="${HOME}/Applications/node/share/man:${MANPATH}"
