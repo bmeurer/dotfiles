@@ -40,3 +40,6 @@
 [submodule "vim/vim.symlink/bundle/ListToggle"]
 	path = vim/vim.symlink/bundle/ListToggle
 	url = https://github.com/Valloric/ListToggle
+[submodule "vim/vim.symlink/bundle/typescript-vim"]
+	path = vim/vim.symlink/bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
