@@ -19,5 +19,5 @@ set guioptions=aem
 set toolbariconsize=tiny
 set lines=40
 set columns=80
-set guifont=Bitstream\ Vera\ Sans\ Mono\ 10
+set guifont=Anonymice\ Powerline:h13
 set visualbell
