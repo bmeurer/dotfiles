@@ -47,6 +47,7 @@ alias ndbg='ninja -C out/Debug '
 
 # Shortcuts for Cocoa applications
 if [[ "${OSTYPE}" =~ "darwin" ]]; then
+	alias code="open -a 'Visual Studio Code' "
 	alias emacs="open -b org.gnu.Emacs -g "
 	alias gvim=mvim
 fi
