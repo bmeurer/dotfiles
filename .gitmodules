@@ -46,3 +46,6 @@
 [submodule "vim/vim.symlink/bundle/vim-prettier"]
 	path = vim/vim.symlink/bundle/vim-prettier
 	url = https://github.com/prettier/vim-prettier
+[submodule "vim/vim.symlink/bundle/editorconfig-vim"]
+	path = vim/vim.symlink/bundle/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim
