@@ -129,6 +129,11 @@ if [[ -d "${HOME}/Applications/android-ndk-current" ]]; then
 	export ANDROID_NDK_ROOT
 fi
 
+# Git completion support
+if [[ -f "/usr/local/git/current/share/git-core/git-completion.bash" ]]; then
+	source "/usr/local/git/current/share/git-core/git-completion.bash"
+fi
+
 # Set MAKEFLAGS based on processor count
 if [[ -f /proc/cpuinfo ]]; then
 	ncpu="$(grep -c ^processor /proc/cpuinfo)"
