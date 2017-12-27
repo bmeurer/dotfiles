@@ -49,3 +49,6 @@
 [submodule "vim/vim.symlink/bundle/editorconfig-vim"]
 	path = vim/vim.symlink/bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim
+[submodule "vim/vim.symlink/bundle/vim-es6"]
+	path = vim/vim.symlink/bundle/vim-es6
+	url = https://github.com/isRuslan/vim-es6.git
