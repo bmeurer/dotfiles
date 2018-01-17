@@ -87,13 +87,6 @@ if [[ -d "${HOME}/Projects/v8/out/Release" ]]; then
 	export D8_PATH
 fi
 
-# node related paths.
-if [[ -d "${HOME}/Applications/node" ]]; then
-	MANPATH="${HOME}/Applications/node/share/man:${MANPATH}"
-	PATH="${HOME}/Applications/node/bin:${PATH}"
-	export MANPATH PATH
-fi
-
 # MacPorts related paths
 if [[ -d /opt/local ]]; then
 	MANPATH="/opt/local/share/man:${MANPATH}"
@@ -153,6 +146,6 @@ unset ncpu
 PATH="${HOME}/bin:${PATH}"
 
 # Setup nvm support.
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="${HOME}/.nvm"
+[ -s "${NVM_DIR}/nvm.sh" ] && source "${NVM_DIR}/nvm.sh"  # This loads nvm
+[ -s "${NVM_DIR}/bash_completion" ] && source "${NVM_DIR}/bash_completion"  # This loads nvm bash_completion
