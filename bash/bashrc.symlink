@@ -87,6 +87,12 @@ if [[ -d "${HOME}/Projects/v8/out/Release" ]]; then
 	export D8_PATH
 fi
 
+# Python 3.7 related paths.
+if [[ -d "/Library/Frameworks/Python.framework/Versions/3.7/bin" ]]; then
+	PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+	export PATH
+fi
+
 # MacPorts related paths
 if [[ -d /opt/local ]]; then
 	MANPATH="/opt/local/share/man:${MANPATH}"
@@ -125,6 +131,11 @@ fi
 # Git completion support
 if [[ -f "/usr/local/git/current/share/git-core/git-completion.bash" ]]; then
 	source "/usr/local/git/current/share/git-core/git-completion.bash"
+fi
+
+# travis support.
+if [[ -f "${HOME}/.travis/travis.sh" ]]; then
+	source "${HOME}/.travis/travis.sh"
 fi
 
 # Set MAKEFLAGS based on processor count
