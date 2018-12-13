@@ -55,3 +55,6 @@
 [submodule "vim/vim.symlink/bundle/vim-multiple-cursors"]
 	path = vim/vim.symlink/bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors
+[submodule "vim/vim.symlink/bundle/vim-jinja"]
+	path = vim/vim.symlink/bundle/vim-jinja
+	url = https://github.com/niftylettuce/vim-jinja
