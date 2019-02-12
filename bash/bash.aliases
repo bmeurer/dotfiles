@@ -41,9 +41,9 @@ alias cia='git ci -a'
 alias co='git co'
 alias st='git st'
 
-# Handy aliases for ninja
-alias nrel='ninja -C out/Release '
-alias ndbg='ninja -C out/Debug '
+# Handy aliases for autoninja
+alias nrel='autoninja -C out/Release '
+alias ndbg='autoninja -C out/Debug '
 
 # Shortcuts for Cocoa applications
 if [[ "${OSTYPE}" =~ "darwin" ]]; then
