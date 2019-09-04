@@ -35,11 +35,12 @@ alias ll='ls -l'
 alias l='ls -CF'
 
 # Handy aliases for git
-alias au='git au'
-alias ci='git ci'
-alias cia='git ci -a'
-alias co='git co'
-alias st='git st'
+alias g='git'
+alias gau='git au'
+alias gci='git ci'
+alias gcia='git ci -a'
+alias gco='git co'
+alias gst='git st'
 
 # Handy aliases for autoninja
 alias an='autoninja -C out/Default '
