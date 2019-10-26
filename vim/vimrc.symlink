@@ -147,11 +147,6 @@ match ErrorMsg '\s\+$'
 
 "--}}}
 
-"--{{{ clang-format.py
-map <C-I> :pyf ~/.vim/bin/clang-format.py<CR>
-imap <C-I> <ESC>:pyf ~/.vim/bin/clang-format.py<CR>i
-"--}}}
-
 "--{{{ fugitive.vim
 
 " Each time you open a git object using fugitive it creates a new buffer. This
