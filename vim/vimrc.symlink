@@ -37,19 +37,6 @@ let g:netrw_browse_split = 4
 
 "--}}}
 
-"--{{{ LustyJuggler
-
-" Display the key with the name of the buffer
-let g:LustyJugglerShowKeys = 'a'
-
-" Use Alt-Tab mode
-let g:LustyJugglerAltTabMode = 1
-
-" Bind LustyJuggler to Q (we don't want ex mode anyways)
-noremap <silent> Q :LustyJuggler<CR>
-
-"--}}}
-
 "--{{{ Shortcut mappings
 
 " Quickly edit/reload the vimrc file
