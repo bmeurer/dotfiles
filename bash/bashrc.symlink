@@ -1,6 +1,6 @@
 # .bashrc - Interactive bash configuration file
 #
-# Copyright 2001-2014 Benedikt Meurer
+# Copyright 2001-2019 Benedikt Meurer
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -29,8 +29,9 @@ fi
 DOTFILES="${HOME}/.dotfiles"
 
 # Set a fancy prompt and xterm title
+GIT_PS1_SHOWDIRTYSTATE=1
 source "${DOTFILES}/sh/git-prompt.sh"
-PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[35m\]$(__git_ps1)\[\033[00m\]$ '
+PS1='\[\e[1;39m\]\h\[\e[01;33m\]:\[\e[1;32m\]\w\[\e[1;35m\]$(__git_ps1)\[\e[01;33m\]$\[\e[0m\] '
 case "${TERM}" in
 xterm*|rxvt*)
 	PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
