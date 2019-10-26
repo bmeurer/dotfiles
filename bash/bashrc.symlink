@@ -71,10 +71,6 @@ export GYP_GENERATORS
 NINJA_STATUS='[%f/%r/%u] '
 export NINJA_STATUS
 
-# Default settings for gyp.
-GYP_DEFINES="v8_use_external_startup_data=0"
-export GYP_DEFINES
-
 # goma support.
 if [[ -d "${HOME}/Applications/goma" ]]; then
 	GOMA_DIR="${HOME}/Applications/goma"
