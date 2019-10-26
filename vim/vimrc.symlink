@@ -1,6 +1,6 @@
 " .vimrc - VI Improved configuration file
 "
-" Copyright 2001-2013 Benedikt Meurer
+" Copyright 2001-2019 Benedikt Meurer
 "
 " Licensed under the Apache License, Version 2.0 (the "License");
 " you may not use this file except in compliance with the License.
@@ -25,6 +25,16 @@ let GtagsCscope_Auto_Load = 1
 let GtagsCscope_Auto_Map = 1 " Use the default key/mouse mapping
 let GtagsCscope_Quiet = 1
 set cscopetag " Use 'vim -t ', ':tag' and '<C-]>'
+"--}}}
+
+"--{{{ netrw
+
+" Thin list view.
+let g:netrw_liststyle = 0
+
+" Open files in split view.
+let g:netrw_browse_split = 4
+
 "--}}}
 
 "--{{{ LustyJuggler
