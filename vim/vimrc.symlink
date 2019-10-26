@@ -92,12 +92,12 @@ endif
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_match_window = 'results:100'  " overcome limit imposed by max height
 let g:ctrlp_user_command = {
-	\ 'types': {
-		\ 1: ['.git', 'cd %s && git ls-files'],
-		\ 2: ['.hg', 'hg --cwd %s locate -I .'],
-		\ },
-	\ 'fallback': 'find %s -type f'
-	\ }
+        \ 'types': {
+                \ 1: ['.git', 'cd %s && git ls-files'],
+                \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+                \ },
+        \ 'fallback': 'find %s -type f'
+        \ }
 
 "--}}}
 
@@ -230,31 +230,31 @@ autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
 if has("autocmd")
-	autocmd BufRead *.d set ts=2 sw=2 et cindent
-	autocmd BufRead *.cs set ts=2 sw=2 et cindent ai
-	autocmd BufRead *.rb set ts=2 sw=2 et ai
-	autocmd BufRead *.py set ts=2 sw=2 et ai
-	autocmd BufRead *.scm set ts=2 sw=2 et ai cindent
-	autocmd BufRead *.h set ts=2 sw=2 et cindent
-	autocmd BufRead *.h.in set ts=2 sw=2 et cindent
-	autocmd BufRead *.c set ts=2 sw=2 et cindent
-	autocmd BufRead *.gob set ts=2 sw=2 et cindent syntax=c
-	autocmd BufRead *.hh set ts=2 sw=2 et cindent
-	autocmd BufRead *.hpp set ts=2 sw=2 et cindent
-	autocmd BufRead *.cc set ts=2 sw=2 et cindent
-	autocmd BufRead *.cpp set ts=2 sw=2 et cindent
-	autocmd BufRead *.java set ts=2 sw=2 et cindent encoding=utf-8
-	autocmd BufRead *.m4 set ts=2 sw=2 et
-	autocmd BufRead *.ac set ts=2 sw=2 et
-	autocmd BufRead *.tex set ts=2 sw=2 et
-	autocmd BufRead *.html set ts=2 sw=2 et
-	autocmd BufRead *.xml set ts=2 sw=2 et encoding=utf-8
-	autocmd BufRead *.po set encoding=UTF-8
-	autocmd BufRead *.properties set encoding=iso8859-1
-	autocmd BufRead *.ml set syntax=ocaml ts=2 sw=2 et
-	autocmd BufRead *.mli set syntax=ocaml ts=2 sw=2 et
-	autocmd BufRead *.mlp set syntax=ocaml ts=2 sw=2 et
-	autocmd BufRead *.ml.ab set syntax=ocaml ts=2 sw=2 et
+        autocmd BufRead *.d set ts=2 sw=2 et cindent
+        autocmd BufRead *.cs set ts=2 sw=2 et cindent ai
+        autocmd BufRead *.rb set ts=2 sw=2 et ai
+        autocmd BufRead *.py set ts=2 sw=2 et ai
+        autocmd BufRead *.scm set ts=2 sw=2 et ai cindent
+        autocmd BufRead *.h set ts=2 sw=2 et cindent
+        autocmd BufRead *.h.in set ts=2 sw=2 et cindent
+        autocmd BufRead *.c set ts=2 sw=2 et cindent
+        autocmd BufRead *.gob set ts=2 sw=2 et cindent syntax=c
+        autocmd BufRead *.hh set ts=2 sw=2 et cindent
+        autocmd BufRead *.hpp set ts=2 sw=2 et cindent
+        autocmd BufRead *.cc set ts=2 sw=2 et cindent
+        autocmd BufRead *.cpp set ts=2 sw=2 et cindent
+        autocmd BufRead *.java set ts=2 sw=2 et cindent encoding=utf-8
+        autocmd BufRead *.m4 set ts=2 sw=2 et
+        autocmd BufRead *.ac set ts=2 sw=2 et
+        autocmd BufRead *.tex set ts=2 sw=2 et
+        autocmd BufRead *.html set ts=2 sw=2 et
+        autocmd BufRead *.xml set ts=2 sw=2 et encoding=utf-8
+        autocmd BufRead *.po set encoding=UTF-8
+        autocmd BufRead *.properties set encoding=iso8859-1
+        autocmd BufRead *.ml set syntax=ocaml ts=2 sw=2 et
+        autocmd BufRead *.mli set syntax=ocaml ts=2 sw=2 et
+        autocmd BufRead *.mlp set syntax=ocaml ts=2 sw=2 et
+        autocmd BufRead *.ml.ab set syntax=ocaml ts=2 sw=2 et
 endif
 
 " lower the VIM update timer
@@ -279,5 +279,5 @@ augroup END
 
 " Site-local vim settings (i.e. at Google).
 if filereadable(glob("~/.vimrc.local"))
-	source ~/.vimrc.local
+        source ~/.vimrc.local
 endif
