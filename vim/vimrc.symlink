@@ -75,18 +75,6 @@ nnoremap <leader>pc :YcmCompleter GoToDeclaration<CR>
 
 "--}}}
 
-"--{{{ ack.vim
-
-if executable('ag')
-  let g:ackprg = "ag --nocolor --nogroup --column"
-elseif executable('ack-grep')
-  let g:ackprg = "ack-grep --nocolor --nogroup --column"
-elseif executable('ack')
-  let g:ackprg = "ack --nocolor --nogroup --column"
-endif
-
-"--}}}
-
 "--{{{ ctrlp.vim
 
 let g:ctrlp_cmd = 'CtrlPMixed'
