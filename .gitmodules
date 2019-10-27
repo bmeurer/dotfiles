@@ -37,9 +37,6 @@
 [submodule "vim/vim.symlink/bundle/ListToggle"]
 	path = vim/vim.symlink/bundle/ListToggle
 	url = https://github.com/Valloric/ListToggle
-[submodule "vim/vim.symlink/bundle/typescript-vim"]
-	path = vim/vim.symlink/bundle/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
 [submodule "vim/vim.symlink/bundle/vim-prettier"]
 	path = vim/vim.symlink/bundle/vim-prettier
 	url = https://github.com/prettier/vim-prettier
@@ -67,3 +64,12 @@
 [submodule "vim/vim.symlink/bundle/vim-numbertoggle"]
 	path = vim/vim.symlink/bundle/vim-numbertoggle
 	url = https://github.com/jeffkreeftmeijer/vim-numbertoggle.git
+[submodule "vim/vim.symlink/bundle/yats.vim"]
+	path = vim/vim.symlink/bundle/yats.vim
+	url = https://github.com/HerringtonDarkholme/yats.vim
+[submodule "vim/vim.symlink/bundle/yajs.vim"]
+	path = vim/vim.symlink/bundle/yajs.vim
+	url = https://github.com/othree/yajs.vim
+[submodule "vim/vim.symlink/bundle/es.next.syntax.vim"]
+	path = vim/vim.symlink/bundle/es.next.syntax.vim
+	url = https://github.com/othree/es.next.syntax.vim
