@@ -73,3 +73,9 @@
 [submodule "vim/vim.symlink/bundle/es.next.syntax.vim"]
 	path = vim/vim.symlink/bundle/es.next.syntax.vim
 	url = https://github.com/othree/es.next.syntax.vim
+[submodule "vim/vim.symlink/bundle/fzf"]
+	path = vim/vim.symlink/bundle/fzf
+	url = https://github.com/junegunn/fzf.git
+[submodule "vim/vim.symlink/bundle/fzf.vim"]
+	path = vim/vim.symlink/bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim

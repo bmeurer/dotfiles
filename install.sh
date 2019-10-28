@@ -2,7 +2,7 @@
 #
 # install.sh - Install these dotfiles into your home directory
 #
-# Copyright 2012-2013 Benedikt Meurer
+# Copyright 2012-2019 Benedikt Meurer
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -28,6 +28,9 @@ git submodule sync || exit $?
 # Update the Git submodules
 echo "Updating git submodules..."
 git submodule update || exit $?
+
+# Install fzf binary
+(cd vim/vim.symlink/bundle/fzf && ./install --bin) || exit $?
 
 SYMLINKS=`find * -name '*.symlink'`
 for SYMLINK in ${SYMLINKS}; do
