@@ -34,9 +34,6 @@
 [submodule "vim/vim.symlink/bundle/ListToggle"]
 	path = vim/vim.symlink/bundle/ListToggle
 	url = https://github.com/Valloric/ListToggle
-[submodule "vim/vim.symlink/bundle/typescript-vim"]
-	path = vim/vim.symlink/bundle/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
 [submodule "vim/vim.symlink/bundle/vim-prettier"]
 	path = vim/vim.symlink/bundle/vim-prettier
 	url = https://github.com/prettier/vim-prettier
@@ -70,3 +67,6 @@
 [submodule "vim/vim.symlink/bundle/fzf.vim"]
 	path = vim/vim.symlink/bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
+[submodule "vim/vim.symlink/bundle/vim-polylgot"]
+	path = vim/vim.symlink/bundle/vim-polylgot
+	url = https://github.com/sheerun/vim-polyglot
