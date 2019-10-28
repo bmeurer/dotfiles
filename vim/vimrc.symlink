@@ -75,17 +75,11 @@ nnoremap <leader>pc :YcmCompleter GoToDeclaration<CR>
 
 "--}}}
 
-"--{{{ ctrlp.vim
+"--{{{ fzf
 
-let g:ctrlp_cmd = 'CtrlPMixed'
-let g:ctrlp_match_window = 'results:100'  " overcome limit imposed by max height
-let g:ctrlp_user_command = {
-        \ 'types': {
-                \ 1: ['.git', 'cd %s && git ls-files'],
-                \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-                \ },
-        \ 'fallback': 'find %s -type f'
-        \ }
+nnoremap <leader>p :History<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>t :Files<CR>
 
 "--}}}
 
