@@ -1,6 +1,6 @@
 " .vimrc - VI Improved configuration file (GUI variant)
 "
-" Copyright 2001-2013 Benedikt Meurer
+" Copyright 2001-2019 Benedikt Meurer
 "
 " Licensed under the Apache License, Version 2.0 (the "License");
 " you may not use this file except in compliance with the License.
@@ -19,5 +19,5 @@ set guioptions=aem
 set toolbariconsize=tiny
 set lines=40
 set columns=80
-set guifont=Monospace\ Regular
+set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline
 set visualbell
