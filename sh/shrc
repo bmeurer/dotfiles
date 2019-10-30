@@ -1,0 +1,95 @@
+# shrc - Interactive shell configuration file
+#
+# Copyright 2001-2019 Benedikt Meurer
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+# Shortcut to the dotfiles repository
+DOTFILES="${HOME}/.dotfiles"
+
+# Set editor to vim
+EDITOR=vim
+export EDITOR
+
+# Status message for ninja.
+NINJA_STATUS='[%f/%r/%u] '
+export NINJA_STATUS
+
+# d8 related paths.
+if [[ -d "${HOME}/Projects/v8/out/Release" ]]; then
+	D8_PATH="${HOME}/Projects/v8/out/Release"
+	export D8_PATH
+fi
+
+# Python 3.7 related paths.
+if [[ -d "/Library/Frameworks/Python.framework/Versions/3.7/bin" ]]; then
+	PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+	export PATH
+fi
+
+# depot_tools must be first in $PATH
+if [[ -d "${HOME}/Applications/depot_tools" ]]; then
+	PATH="${HOME}/Applications/depot_tools:${PATH}"
+fi
+
+# Setup chromium development sandbox
+if [[ -x "/usr/local/sbin/chrome-devel-sandbox" ]]; then
+	CHROME_DEVEL_SANDBOX="/usr/local/sbin/chrome-devel-sandbox"
+	export CHROME_DEVEL_SANDBOX
+fi
+
+# Setup Android NDK
+if [[ -d "${HOME}/Applications/android-ndk-current" ]]; then
+	ANDROID_NDK_ROOT="${HOME}/Applications/android-ndk-current"
+	export ANDROID_NDK_ROOT
+fi
+
+# travis support.
+if [[ -f "${HOME}/.travis/travis.sh" ]]; then
+	source "${HOME}/.travis/travis.sh"
+fi
+
+# Set MAKEFLAGS based on processor count
+if [[ -f /proc/cpuinfo ]]; then
+	ncpu="$(grep -c ^processor /proc/cpuinfo)"
+	if [[ ${ncpu} -eq 0 ]]; then
+		ncpu=1
+	fi
+else
+	ncpu="$(sysctl hw.ncpu | head -1 | grep -o '[0-9]*$')"
+fi
+if [[ -n "${ncpu}" ]]; then
+	MAKEFLAGS="${MAKEFLAGS} -j${ncpu}"
+	export MAKEFLAGS
+fi
+unset ncpu
+
+# Set PATH so it includes user's private bin
+PATH="${HOME}/bin:${PATH}"
+
+# Setup nvm support.
+export NVM_DIR="${HOME}/.nvm"
+[[ -s "${NVM_DIR}/nvm.sh" ]] && source "${NVM_DIR}/nvm.sh"  # This loads nvm
+[[ -s "${NVM_DIR}/bash_completion" ]] && source "${NVM_DIR}/bash_completion"  # This loads nvm bash_completion
+
+# Setup fzf support.
+PATH="${HOME}/.vim/bundle/fzf/bin:${PATH}"
+export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
+if [[ -n "${BASH_VERSION}" ]]; then
+	source "${HOME}/.vim/bundle/fzf/shell/completion.bash"
+	source "${HOME}/.vim/bundle/fzf/shell/key-bindings.bash"
+elif [[ -n "${ZSH_VERSION}" ]]; then
+	source "${HOME}/.vim/bundle/fzf/shell/completion.zsh"
+	source "${HOME}/.vim/bundle/fzf/shell/key-bindings.zsh"
+fi

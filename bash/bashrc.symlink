@@ -25,8 +25,8 @@ elif [[ -r /etc/bash.bashrc ]]; then
 	. /etc/bash.bashrc
 fi
 
-# Shortcut to the dotfiles repository
-DOTFILES="${HOME}/.dotfiles"
+# Source generic shell configuration
+source "${HOME}/.dotfiles/sh/shrc"
 
 # Set a fancy prompt and xterm title
 GIT_PS1_SHOWDIRTYSTATE=1
@@ -59,50 +59,6 @@ HISTFILESIZE="${HISTSIZE}"		# big big history
 shopt -s histappend			# append to history, don't overwrite i
 export HISTCONTROL HISTSIZE HISTFILESIZE
 
-# Set editor to vim
-EDITOR=vim
-export EDITOR
-
-# Default generator for gyp.
-GYP_GENERATORS=ninja
-export GYP_GENERATORS
-
-# Status message for ninja.
-NINJA_STATUS='[%f/%r/%u] '
-export NINJA_STATUS
-
-# goma support.
-if [[ -d "${HOME}/Applications/goma" ]]; then
-	GOMA_DIR="${HOME}/Applications/goma"
-	GYP_DEFINES="${GYP_DEFINES} use_goma=1 gomadir=\"${GOMA_DIR}\""
-	export GOMA_DIR GYP_DEFINES
-fi
-
-# d8 related paths.
-if [[ -d "${HOME}/Projects/v8/out/Release" ]]; then
-	D8_PATH="${HOME}/Projects/v8/out/Release"
-	export D8_PATH
-fi
-
-# Python 3.7 related paths.
-if [[ -d "/Library/Frameworks/Python.framework/Versions/3.7/bin" ]]; then
-	PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
-	export PATH
-fi
-
-# MacPorts related paths
-if [[ -d /opt/local ]]; then
-	MANPATH="/opt/local/share/man:${MANPATH}"
-	PATH="/opt/local/bin:/opt/local/sbin:${PATH}"
-	PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:${PKG_CONFIG_PATH}"
-	export MANPATH PKG_CONFIG_PATH
-fi
-
-# depot_tools must be first in $PATH
-if [[ -d "${HOME}/Applications/depot_tools" ]]; then
-	PATH="${HOME}/Applications/depot_tools:${PATH}"
-fi
-
 # Enable various useful bash aliases
 . "${DOTFILES}/bash/bash.aliases"
 
@@ -113,53 +69,7 @@ elif [[ -r /etc/bash_completion ]]; then
 	. /etc/bash_completion
 fi
 
-# Setup chromium development sandbox
-if [[ -x "/usr/local/sbin/chrome-devel-sandbox" ]]; then
-	CHROME_DEVEL_SANDBOX="/usr/local/sbin/chrome-devel-sandbox"
-	export CHROME_DEVEL_SANDBOX
-fi
-
-# Setup Android NDK
-if [[ -d "${HOME}/Applications/android-ndk-current" ]]; then
-	ANDROID_NDK_ROOT="${HOME}/Applications/android-ndk-current"
-	export ANDROID_NDK_ROOT
-fi
-
 # Git completion support
 if [[ -f "/usr/local/git/current/share/git-core/git-completion.bash" ]]; then
 	source "/usr/local/git/current/share/git-core/git-completion.bash"
 fi
-
-# travis support.
-if [[ -f "${HOME}/.travis/travis.sh" ]]; then
-	source "${HOME}/.travis/travis.sh"
-fi
-
-# Set MAKEFLAGS based on processor count
-if [[ -f /proc/cpuinfo ]]; then
-	ncpu="$(grep -c ^processor /proc/cpuinfo)"
-	if [[ ${ncpu} -eq 0 ]]; then
-		ncpu=1
-	fi
-else
-	ncpu="$(sysctl hw.ncpu | head -1 | grep -o '[0-9]*$')"
-fi
-if [[ -n "${ncpu}" ]]; then
-	MAKEFLAGS="${MAKEFLAGS} -j${ncpu}"
-	export MAKEFLAGS
-fi
-unset ncpu
-
-# Set PATH so it includes user's private bin
-PATH="${HOME}/bin:${PATH}"
-
-# Setup nvm support.
-export NVM_DIR="${HOME}/.nvm"
-[ -s "${NVM_DIR}/nvm.sh" ] && source "${NVM_DIR}/nvm.sh"  # This loads nvm
-[ -s "${NVM_DIR}/bash_completion" ] && source "${NVM_DIR}/bash_completion"  # This loads nvm bash_completion
-
-# Setup fzf support.
-PATH="${HOME}/.vim/bundle/fzf/bin:${PATH}"
-source "${HOME}/.vim/bundle/fzf/shell/completion.bash"
-source "${HOME}/.vim/bundle/fzf/shell/key-bindings.bash"
-export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"

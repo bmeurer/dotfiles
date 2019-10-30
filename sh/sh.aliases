@@ -1,4 +1,4 @@
-# bash.aliases - Various useful bash aliases
+# sh.aliases - Various useful shell aliases
 #
 # Copyright 2001-2019 Benedikt Meurer
 #
@@ -15,21 +15,27 @@
 # limitations under the License.
 #
 
-# Enable color support in ls
-if [[ -x /usr/bin/dircolors ]]; then
-	# Probably Linux or some GNUish
-	eval "`/usr/bin/dircolors -b ${HOME}/.dircolors`"
-	alias ls='ls --color=auto'
-elif [[ -x /opt/local/bin/gdircolors ]]; then
-	# coreutils from MacPorts on OS X
-	eval "`/opt/local/bin/gdircolors -b ${HOME}/.dircolors`"
-	alias ls='/opt/local/bin/gls --color=auto'
-else
-	# Probably OS X or some BSDish
-	alias ls='ls -G'
+# Handy aliases for ls
+alias la='ls -A'
+alias ll='ls -l'
+alias l='ls -CF'
+
+# Handy aliases for git
+alias g='git'
+alias gau='git au'
+alias gci='git ci'
+alias gcia='git ci -a'
+alias gco='git co'
+alias gst='git st'
+
+# Handy aliases for autoninja
+alias an='autoninja -C out/Default '
+alias andbg='autoninja -C out/Debug '
+alias anrel='autoninja -C out/Release '
+
+# Shortcuts for Cocoa applications
+if [[ "${OSTYPE}" =~ "darwin" ]]; then
+	alias code="open -a 'Visual Studio Code' "
+	alias emacs="open -b org.gnu.Emacs -g "
+	alias gvim=mvim
 fi
-
-# Generic shell aliases
-source "${HOME}/.dotfiles/sh/sh.aliases"
-
-# vim:set ft=sh:
