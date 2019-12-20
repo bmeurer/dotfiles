@@ -93,3 +93,10 @@ elif [[ -n "${ZSH_VERSION}" ]]; then
 	source "${HOME}/.vim/bundle/fzf/shell/completion.zsh"
 	source "${HOME}/.vim/bundle/fzf/shell/key-bindings.zsh"
 fi
+
+# Setup rustup support.
+export RUSTUP_HOME="${HOME}/.rustup"
+
+# Setup cargo support.
+export CARGO_HOME="${HOME}/.cargo"
+PATH="${CARGO_HOME}/bin:${PATH}"
