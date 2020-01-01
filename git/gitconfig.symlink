@@ -66,6 +66,7 @@
 	autocrlf = false
 	filemode = false
 	deltaBaseCacheLimit = 1G
+	pager = less -F -X
 
 [depot-tools]
 	branch-limit = 256
