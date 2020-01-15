@@ -94,6 +94,11 @@ elif [[ -n "${ZSH_VERSION}" ]]; then
 	source "${HOME}/.vim/bundle/fzf/shell/key-bindings.zsh"
 fi
 
+# Setup goma support.
+export GOMA_DIR="${HOME}/goma"
+export GOMACTL_RBE_DOGFOOD="true"
+export GOMA_ARBITRARY_TOOLCHAIN_SUPPORT="true"
+
 # Setup rustup support.
 export RUSTUP_HOME="${HOME}/.rustup"
 
