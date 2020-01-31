@@ -98,6 +98,8 @@ fi
 export GOMA_DIR="${HOME}/goma"
 export GOMACTL_RBE_DOGFOOD="true"
 export GOMA_ARBITRARY_TOOLCHAIN_SUPPORT="true"
+export GOMA_TMP_DIR="${HOME}/.cache/goma"
+mkdir -m 0700 -p "${GOMA_TMP_DIR}"
 
 # Setup rustup support.
 export RUSTUP_HOME="${HOME}/.rustup"
