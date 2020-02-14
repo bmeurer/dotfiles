@@ -46,3 +46,9 @@ for SYMLINK in ${SYMLINKS}; do
 		ln -s "${PWD#${HOME}/}/${SYMLINK}" "${TARGET}" || exit 1
 	fi
 done
+
+# Update font-config
+if [[ -x /usr/bin/fc-cache ]]; then
+	echo "Updating font-config cache..."
+	/usr/bin/fc-cache -f
+fi
