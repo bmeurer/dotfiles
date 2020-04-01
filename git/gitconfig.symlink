@@ -95,4 +95,7 @@
 [help]
 	autocorrect = 3
 
+[interactive]
+	singleKey = true
+
 # vim:set ft=gitconfig noet sw=8 ts=8:
