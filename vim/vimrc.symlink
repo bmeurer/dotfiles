@@ -1,6 +1,6 @@
 " .vimrc - VI Improved configuration file
 "
-" Copyright 2001-2019 Benedikt Meurer
+" Copyright 2001-2020 Benedikt Meurer
 "
 " Licensed under the Apache License, Version 2.0 (the "License");
 " you may not use this file except in compliance with the License.
@@ -197,7 +197,7 @@ set ruler
 
 " colors
 colorscheme solarized
-set background=dark
+set background=light
 
 " folding
 set fen
