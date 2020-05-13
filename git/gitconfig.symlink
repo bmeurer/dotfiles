@@ -101,4 +101,7 @@
 [interactive]
 	singleKey = true
 
+[pull]
+	ff = only
+
 # vim:set ft=gitconfig noet sw=8 ts=8:
