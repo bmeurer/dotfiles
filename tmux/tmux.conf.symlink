@@ -83,5 +83,9 @@ bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iqE 
 # Status update interval
 set -g status-interval 1
 
-# Color scheme
-source-file "${HOME}/.dotfiles/tmux/tmux-themepack/basic.tmuxtheme"
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run -b '~/.tmux/plugins/tpm/tpm'

@@ -1,5 +1,6 @@
 emacs/emacs.d.symlink/elpa
 emacs/emacs.d.symlink/history
 emacs/emacs.d.symlink/url
+tmux/tmux.symlink/plugins/*
 vim/vim.symlink/.netrwhist
 vim/vim.symlink/doc/tags
