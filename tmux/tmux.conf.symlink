@@ -84,4 +84,4 @@ bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iqE 
 set -g status-interval 1
 
 # Color scheme
-source-file "${HOME}/.dotfiles/tmux/tmux-themepack/powerline/double/green.tmuxtheme"
+source-file "${HOME}/.dotfiles/tmux/tmux-themepack/basic.tmuxtheme"
