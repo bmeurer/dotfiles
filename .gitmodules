@@ -73,3 +73,6 @@
 [submodule "tmux/tmux.symlink/plugins/tpm"]
 	path = tmux/tmux.symlink/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
+[submodule "gnome-terminal"]
+	path = gnome-terminal
+	url = https://github.com/dracula/gnome-terminal
