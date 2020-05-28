@@ -83,7 +83,13 @@ bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iqE 
 # Status update interval
 set -g status-interval 1
 
+# Dracula theme settings
+set -g @dracula-show-battery false
+set -g @dracula-show-network false
+set -g @dracula-show-weather false
+
 # List of plugins
+set -g @plugin 'dracula/tmux'
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 
