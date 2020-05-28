@@ -66,11 +66,20 @@ if [[ -x /usr/bin/gsettings ]]; then
 		value=$(echo $line | cut -f2- -d' ')
 		/usr/bin/gsettings set ${gschema}:${gpath} $key "$value"
 	done <<EOF
+foreground-color '#D3D7CF'
+highlight-foreground-color '#ffffff'
+palette ['#2E3436', '#CC0000', '#4E9A06', '#C4A000', '#3465A4', '#75507B', '#06989A', '#D3D7CF', '#555753', '#EF2929', '#8AE234', '#FCE94F', '#729FCF', '#AD7FA8', '#34E2E2', '#EEEEEC']
+cursor-background-color '#000000'
 scrollbar-policy 'always'
 use-system-font false
+bold-color '#000000'
+cursor-foreground-color '#ffffff'
 visible-name 'Benedikt'
 scrollback-unlimited true
 font 'JetBrains Mono 12'
+highlight-colors-set false
+use-theme-colors false
+background-color 'rgb(0,43,54)'
+highlight-background-color '#000000'
 EOF
-	(cd gnome-terminal && ./install.sh -s Dracula -p Benedikt --skip-dircolors)
 fi

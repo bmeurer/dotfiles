@@ -32,7 +32,7 @@ set -g pane-base-index 1
 setw -g mode-keys vi
 
 # Set the default terminal mode to 256color
-set -g default-terminal "screen-256color"
+set -g default-terminal "xterm-256color"
 
 # Set default shell to zsh
 set -g default-shell /bin/zsh
@@ -83,15 +83,5 @@ bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iqE 
 # Status update interval
 set -g status-interval 1
 
-# Dracula theme settings
-set -g @dracula-show-battery false
-set -g @dracula-show-network false
-set -g @dracula-show-weather false
-
-# List of plugins
-set -g @plugin 'dracula/tmux'
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-sensible'
-
-# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-run -b '~/.tmux/plugins/tpm/tpm'
+# Color scheme
+source-file "${HOME}/.dotfiles/tmux/tmux-themepack/powerline/double/orange.tmuxtheme"
