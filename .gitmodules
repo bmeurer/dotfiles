@@ -76,3 +76,6 @@
 [submodule "gnome-terminal"]
 	path = gnome-terminal
 	url = https://github.com/dracula/gnome-terminal
+[submodule "vim/vim.symlink/bundle/dracula"]
+	path = vim/vim.symlink/bundle/dracula
+	url = git@github.com:dracula/vim.git

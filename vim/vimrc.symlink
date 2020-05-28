@@ -119,12 +119,8 @@ let g:EasyMotion_space_jump_first = 1
 " Always show the status line
 set laststatus=2
 
-" Use powerline fonts
-let g:airline_powerline_fonts = 1
-
 " Use solarized theme
-let g:airline_theme = 'solarized'
-let g:airline_solarized_bg = 'dark'
+let g:airline_theme = 'luna'
 
 "--}}}
 
@@ -196,8 +192,9 @@ set ruler
 "set rulerformat=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 
 " colors
-colorscheme solarized
-set background=light
+set background=dark
+colorscheme dracula
+hi! Normal ctermbg=NONE guibg=NONE
 
 " folding
 set fen
