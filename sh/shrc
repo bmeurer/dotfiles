@@ -43,6 +43,12 @@ if [[ -d "${HOME}/Applications/depot_tools" ]]; then
 	PATH="${HOME}/Applications/depot_tools:${PATH}"
 fi
 
+# gclient needs Chromium buildtools
+if [[ -d "${HOME}/Projects/chromium/src/buildtools" ]]; then
+	CHROMIUM_BUILDTOOLS_PATH="${HOME}/Projects/chromium/src/buildtools"
+	export CHROMIUM_BUILDTOOLS_PATH
+fi
+
 # Setup chromium development sandbox
 if [[ -x "/usr/local/sbin/chrome-devel-sandbox" ]]; then
 	CHROME_DEVEL_SANDBOX="/usr/local/sbin/chrome-devel-sandbox"
