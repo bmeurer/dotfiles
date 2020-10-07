@@ -110,3 +110,6 @@ export RUSTUP_HOME="${HOME}/.rustup"
 # Setup cargo support.
 export CARGO_HOME="${HOME}/.cargo"
 PATH="${CARGO_HOME}/bin:${PATH}"
+
+# Chromium development on Cloudtop.
+export SKIP_GCE_AUTH_FOR_GIT=1
