@@ -76,7 +76,7 @@ bold-color '#000000'
 cursor-foreground-color '#272822'
 visible-name 'Benedikt'
 scrollback-unlimited true
-font 'JetBrains Mono 12'
+font 'JetBrains Mono 13'
 highlight-colors-set false
 use-theme-colors false
 background-color '#272822'
