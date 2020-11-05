@@ -195,8 +195,8 @@ set ruler
 "set rulerformat=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 
 " colors
-set background=dark
-colorscheme base16-monokai
+set background=light
+colorscheme base16-google-light
 set termguicolors
 
 " folding
