@@ -1,6 +1,6 @@
 # shrc - Interactive shell configuration file
 #
-# Copyright 2001-2019 Benedikt Meurer
+# Copyright 2001-2021 Benedikt Meurer
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ EDITOR=vim
 export EDITOR
 
 # Status message for ninja.
-NINJA_STATUS='[%f/%r/%u] '
+NINJA_STATUS='[%p | %f/%r/%u] '
 export NINJA_STATUS
 
 # d8 related paths.
