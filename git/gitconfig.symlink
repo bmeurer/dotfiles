@@ -1,6 +1,6 @@
 # .gitconfig - Global git configuration file
 #
-# Copyright 2001-2019 Benedikt Meurer
+# Copyright 2001-2021 Benedikt Meurer
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -103,5 +103,8 @@
 
 [pull]
 	ff = only
+
+[rebase]
+	autostash = true
 
 # vim:set ft=gitconfig noet sw=8 ts=8:
