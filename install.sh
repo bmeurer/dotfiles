@@ -2,7 +2,7 @@
 #
 # install.sh - Install these dotfiles into your home directory
 #
-# Copyright 2012-2020 Benedikt Meurer
+# Copyright 2012-2021 Benedikt Meurer
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -45,6 +45,23 @@ for SYMLINK in ${SYMLINKS}; do
 		fi
 		echo "Installing ${SYMLINK} as ~/.${BASENAME}..."
 		ln -s "${PWD#${HOME}/}/${SYMLINK}" "${TARGET}" || exit 1
+	fi
+done
+
+# Create the symlinks in bin.
+mkdir -p "${HOME}/bin" || exit $?
+SYMLINKS=`find bin -name '*.sh'`
+for SYMLINK in ${SYMLINKS}; do
+	BASENAME=$(basename "${SYMLINK/%.sh}")
+	if [ -n "${BASENAME}" ]; then
+		TARGET="${HOME}/bin/${BASENAME}"
+		if [ -L "${TARGET}" ]; then
+			rm -f "${TARGET}" || exit 1
+		elif [ -e "${TARGET}"  ]; then
+			mv "${TARGET}" "${TARGET}.bak" || exit 1
+		fi
+		echo "Installing ${SYMLINK} as ~/bin/${BASENAME}..."
+		ln -s "../${PWD#${HOME}/}/${SYMLINK}" "${TARGET}" || exit 1
 	fi
 done
 
