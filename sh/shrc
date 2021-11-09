@@ -101,7 +101,7 @@ elif [[ -n "${ZSH_VERSION}" ]]; then
 fi
 
 # Setup goma support.
-export GOMA_TMP_DIR="${HOME}/.cache/goma"
+export GOMA_TMP_DIR="/dev/shm/goma-${USER}"
 mkdir -m 0700 -p "${GOMA_TMP_DIR}"
 
 # Setup rustup support.
