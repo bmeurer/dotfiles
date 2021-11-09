@@ -18,5 +18,5 @@
 #
 
 for git_dir in ~/Projects/*/.git ~/Projects/*/*/.git; do
-	git --git-dir=${git_dir} fetch --all --quiet || exit $?
+	git --git-dir=${git_dir} fetch --quiet || exit $?
 done
