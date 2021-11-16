@@ -23,8 +23,6 @@
 # Build devtools-frontend first
 (\
 	cd "${HOME}/Projects/devtools/devtools-frontend" && \
-	mkdir -p "/dev/shm/devtools_devtools-frontend_out_Default_gen" && \
-	ln -fsT "/dev/shm/devtools_devtools-frontend_out_Default_gen" "out/Default/gen" && \
 	git diff --quiet && \
 	git checkout "main" && \
 	git cl archive -f && \
@@ -52,8 +50,6 @@
 # Build chromium last
 (\
 	cd "${HOME}/Projects/chromium/src" && \
-	mkdir -p "/dev/shm/chromium_src_out_Default_gen" && \
-	ln -fsT "/dev/shm/chromium_src_out_Default_gen" "out/Default/gen" && \
 	mkdir -p "/dev/shm/chromium_src_out_Default_obj" && \
 	ln -fsT "/dev/shm/chromium_src_out_Default_obj" "out/Default/obj" && \
 	git diff --quiet && \
