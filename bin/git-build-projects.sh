@@ -2,7 +2,7 @@
 #
 # git-fetch-projects.sh - Update projects with respect to upstream.
 #
-# Copyright 2021 Benedikt Meurer
+# Copyright 2021-2022 Benedikt Meurer
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@
 	git checkout "main" && \
 	git cl archive -f && \
 	git pull && \
-	gn gen "out/Default" && \
 	gclient sync && \
+	gn gen "out/Default" && \
 	autoninja -C "out/Default" \
 ) || exit $?
 
@@ -37,13 +37,17 @@
 	cd "${HOME}/Projects/v8/v8" && \
 	mkdir -p "/dev/shm/v8_v8_out_Default_obj" && \
 	ln -fsT "/dev/shm/v8_v8_out_Default_obj" "out/Default/obj" && \
+	mkdir -p "/dev/shm/v8_v8_out_Release_obj" && \
+	ln -fsT "/dev/shm/v8_v8_out_Release_obj" "out/Release/obj" && \
 	git diff --quiet && \
 	git checkout "main" && \
 	git cl archive -f && \
 	git pull && \
-	gn gen "out/Default" && \
 	gclient sync && \
+	gn gen "out/Default" && \
 	autoninja -C "out/Default" && \
+	gn gen "out/Release" && \
+	autoninja -C "out/Release" && \
 	tools/clang/scripts/generate_compdb.py -p "out/Default" -o "compile_commands.json" \
 ) || exit $?
 
@@ -56,8 +60,8 @@
 	git checkout "main" && \
 	git cl archive -f && \
 	git pull && \
-	gn gen "out/Default" && \
 	gclient sync && \
+	gn gen "out/Default" && \
 	autoninja -C "out/Default" && \
 	tools/clang/scripts/generate_compdb.py -p "out/Default" -o "compile_commands.json" \
 ) || exit $?
