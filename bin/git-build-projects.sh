@@ -35,6 +35,8 @@
 # Build v8 next
 (\
 	cd "${HOME}/Projects/v8/v8" && \
+	mkdir -p "/dev/shm/v8_v8_out_Debug_obj" && \
+	ln -fsT "/dev/shm/v8_v8_out_Debug_obj" "out/Debug/obj" && \
 	mkdir -p "/dev/shm/v8_v8_out_Default_obj" && \
 	ln -fsT "/dev/shm/v8_v8_out_Default_obj" "out/Default/obj" && \
 	mkdir -p "/dev/shm/v8_v8_out_Release_obj" && \
@@ -44,6 +46,8 @@
 	git cl archive -f && \
 	git pull && \
 	gclient sync && \
+	gn gen "out/Debug" && \
+	autoninja -C "out/Debug" && \
 	gn gen "out/Default" && \
 	autoninja -C "out/Default" && \
 	gn gen "out/Release" && \
@@ -54,6 +58,8 @@
 # Build chromium last
 (\
 	cd "${HOME}/Projects/chromium/src" && \
+	mkdir -p "/dev/shm/chromium_src_out_Debug_obj" && \
+	ln -fsT "/dev/shm/chromium_src_out_Debug_obj" "out/Debug/obj" && \
 	mkdir -p "/dev/shm/chromium_src_out_Default_obj" && \
 	ln -fsT "/dev/shm/chromium_src_out_Default_obj" "out/Default/obj" && \
 	git diff --quiet && \
@@ -61,8 +67,10 @@
 	git cl archive -f && \
 	git pull && \
 	gclient sync && \
+	gn gen "out/Debug" && \
+	autoninja -C "out/Debug" blink_tests chrome && \
 	gn gen "out/Default" && \
-	autoninja -C "out/Default" && \
+	autoninja -C "out/Default" blink_tests chrome && \
 	tools/clang/scripts/generate_compdb.py -p "out/Default" -o "compile_commands.json" \
 ) || exit $?
 
