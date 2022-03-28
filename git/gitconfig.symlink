@@ -60,7 +60,6 @@
 
 [core]
 	compression = 9
-	fsyncobjectfiles = yes
 	excludesfile = ~/.gitignore
 	editor = vim
 	autocrlf = false
