@@ -35,12 +35,6 @@
 # Build v8 next
 (\
 	cd "${HOME}/Projects/v8/v8" && \
-	mkdir -p "/dev/shm/v8_v8_out_Debug_obj" && \
-	ln -fsT "/dev/shm/v8_v8_out_Debug_obj" "out/Debug/obj" && \
-	mkdir -p "/dev/shm/v8_v8_out_Default_obj" && \
-	ln -fsT "/dev/shm/v8_v8_out_Default_obj" "out/Default/obj" && \
-	mkdir -p "/dev/shm/v8_v8_out_Release_obj" && \
-	ln -fsT "/dev/shm/v8_v8_out_Release_obj" "out/Release/obj" && \
 	git diff --quiet && \
 	git checkout "main" && \
 	git cl archive -f && \
@@ -58,10 +52,6 @@
 # Build chromium last
 (\
 	cd "${HOME}/Projects/chromium/src" && \
-	mkdir -p "/dev/shm/chromium_src_out_Debug_obj" && \
-	ln -fsT "/dev/shm/chromium_src_out_Debug_obj" "out/Debug/obj" && \
-	mkdir -p "/dev/shm/chromium_src_out_Default_obj" && \
-	ln -fsT "/dev/shm/chromium_src_out_Default_obj" "out/Default/obj" && \
 	git diff --quiet && \
 	git checkout "main" && \
 	git cl archive -f && \
