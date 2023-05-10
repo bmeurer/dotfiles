@@ -62,7 +62,7 @@
 	compression = 9
 	excludesfile = ~/.gitignore
 	editor = vim
-	autocrlf = false
+	autocrlf = input
 	filemode = false
 	deltaBaseCacheLimit = 1G
 	pager = less -F -X
