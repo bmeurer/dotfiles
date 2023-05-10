@@ -57,8 +57,6 @@
 	git cl archive -f && \
 	git pull && \
 	gclient sync && \
-	gn gen "out/Debug" && \
-	autoninja -C "out/Debug" blink_tests chrome && \
 	gn gen "out/Default" && \
 	autoninja -C "out/Default" blink_tests chrome && \
 	tools/clang/scripts/generate_compdb.py -p "out/Default" -o "compile_commands.json" \
