@@ -1,6 +1,6 @@
 # .tmux.conf - tmux configuration file.
 #
-# Copyright 2013-2020 Benedikt Meurer
+# Copyright 2013-2023 Benedikt Meurer
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ setw -g mode-keys vi
 
 # Set the default terminal mode to 256color
 set -g default-terminal "xterm-256color"
-
-# Set default shell to zsh
-set -g default-shell /bin/zsh
 
 # Enable activity alerts
 setw -g monitor-activity on
