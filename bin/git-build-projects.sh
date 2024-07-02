@@ -59,6 +59,8 @@
 	gclient sync && \
 	gn gen "out/Default" && \
 	autoninja -C "out/Default" blink_tests chrome && \
+	gn gen "out/Release" && \
+	autoninja -C "out/Release" chrome && \
 	tools/clang/scripts/generate_compdb.py -p "out/Default" -o "compile_commands.json" \
 ) || exit $?
 
