@@ -22,6 +22,7 @@
 
 [alias]
 	au = !git add -u && git st
+	bad = bisect bad
 	br = branch -v
 	ci = commit -v
 	co = checkout
@@ -29,6 +30,7 @@
 	dc = diff --cached
 	ff = merge --ff-only
 	fix = commit -a --amend -C HEAD
+	good = bisect good
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	mb = map-branches -vvv
