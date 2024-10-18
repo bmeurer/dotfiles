@@ -116,3 +116,4 @@ PATH="${CARGO_HOME}/bin:${PATH}"
 
 # Chromium development on Cloudtop.
 export SKIP_GCE_AUTH_FOR_GIT=1
+export PYTHONPYCACHEPREFIX=~/.cache/pycache
