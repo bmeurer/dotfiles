@@ -71,6 +71,7 @@
 
 [depot-tools]
 	branch-limit = 256
+	useNewAuthStack = 1
 
 [github]
 	user = bmeurer
@@ -107,5 +108,11 @@
 
 [rebase]
 	autostash = true
+
+[protocol "sso"]
+	allow = always
+
+[url "sso://chromium/"]
+	insteadOf = https://chromium.googlesource.com/
 
 # vim:set ft=gitconfig noet sw=8 ts=8:
