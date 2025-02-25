@@ -59,6 +59,7 @@
 
 [advice]
 	statusHints = false
+	skippedCherryPicks = false
 
 [core]
 	compression = 9
