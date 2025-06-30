@@ -112,4 +112,7 @@
 [url "sso://chromium/"]
 	insteadOf = https://chromium.googlesource.com/
 
+[url "sso://chrome-internal/"]
+	insteadOf = https://chrome-internal.googlesource.com/
+
 # vim:set ft=gitconfig noet sw=8 ts=8:
