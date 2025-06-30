@@ -28,6 +28,7 @@
 	git cl archive -f && \
 	git pull && \
 	gclient sync && \
+	gn clean "out/Default" && \
 	gn gen "out/Default" && \
 	autoninja -C "out/Default" \
 ) || exit $?
@@ -40,8 +41,10 @@
 	git cl archive -f && \
 	git pull && \
 	gclient sync && \
+	gn clean "out/Debug" && \
 	gn gen "out/Debug" && \
 	autoninja -C "out/Debug" && \
+	gn clean "out/Default" && \
 	gn gen "out/Default" && \
 	autoninja -C "out/Default" && \
 	tools/clang/scripts/generate_compdb.py -p "out/Default" -o "compile_commands.json" \
@@ -55,6 +58,7 @@
 	git cl archive -f && \
 	git pull && \
 	gclient sync && \
+	gn clean "out/Default" && \
 	gn gen "out/Default" && \
 	autoninja -C "out/Default" blink_tests chrome && \
 	tools/clang/scripts/generate_compdb.py -p "out/Default" -o "compile_commands.json" \
