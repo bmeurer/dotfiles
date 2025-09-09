@@ -1,6 +1,6 @@
 # sh.aliases - Various useful shell aliases
 #
-# Copyright 2001-2019 Benedikt Meurer
+# Copyright 2001-2025 Benedikt Meurer
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -39,3 +39,6 @@ if [[ "${OSTYPE}" =~ "darwin" ]]; then
 	alias emacs="open -b org.gnu.Emacs -g "
 	alias gvim=mvim
 fi
+
+# Shortcuts for Gemini
+alias gemini="/google/bin/releases/gemini-cli/tools/gemini"
