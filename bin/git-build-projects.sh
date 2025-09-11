@@ -2,7 +2,7 @@
 #
 # git-fetch-projects.sh - Update projects with respect to upstream.
 #
-# Copyright 2021-2022 Benedikt Meurer
+# Copyright 2021-2025 Benedikt Meurer
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -28,26 +28,11 @@
 	git cl archive -f && \
 	git pull && \
 	gclient sync && \
+	gn clean "out/Debug" && \
+	gn gen "out/Debug" && \
 	gn clean "out/Default" && \
 	gn gen "out/Default" && \
 	autoninja -C "out/Default" \
-) || exit $?
-
-# Build v8 next
-(\
-	cd "${HOME}/Projects/v8/v8" && \
-	git diff --quiet && \
-	git checkout "main" && \
-	git cl archive -f && \
-	git pull && \
-	gclient sync && \
-	gn clean "out/Debug" && \
-	gn gen "out/Debug" && \
-	autoninja -C "out/Debug" && \
-	gn clean "out/Default" && \
-	gn gen "out/Default" && \
-	autoninja -C "out/Default" && \
-	tools/clang/scripts/generate_compdb.py -p "out/Default" -o "compile_commands.json" \
 ) || exit $?
 
 # Build chromium last
