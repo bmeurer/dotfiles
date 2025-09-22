@@ -115,4 +115,34 @@
 [url "sso://chrome-internal/"]
 	insteadOf = https://chrome-internal.googlesource.com/
 
+[url "sso://android/"]
+	insteadOf = https://android.googlesource.com/
+
+[url "sso://aomedia/"]
+	insteadOf = https://aomedia.googlesource.com/
+
+[url "sso://beto-core/"]
+	insteadOf = https://beto-core.googlesource.com/
+
+[url "sso://boringssl/"]
+	insteadOf = https://boringssl.googlesource.com/
+
+[url "sso://dawn/"]
+	insteadOf = https://dawn.googlesource.com/
+
+[url "sso://pdfium/"]
+	insteadOf = https://pdfium.googlesource.com/
+
+[url "sso://quiche/"]
+	insteadOf = https://quiche.googlesource.com/
+
+[url "sso://skia/"]
+	insteadOf = https://skia.googlesource.com/
+
+[url "sso://swiftshader/"]
+	insteadOf = https://swiftshader.googlesource.com/
+
+[url "sso://webrtc/"]
+	insteadOf = https://webrtc.googlesource.com/
+
 # vim:set ft=gitconfig noet sw=8 ts=8:
