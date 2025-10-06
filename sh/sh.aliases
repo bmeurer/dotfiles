@@ -40,5 +40,8 @@ if [[ "${OSTYPE}" =~ "darwin" ]]; then
 	alias gvim=mvim
 fi
 
+# Shortcuts for Python
+alias g3python="/google/bin/users/joshuamorton/g3python/g3python.par"
+
 # Shortcuts for Gemini
 alias gemini="/google/bin/releases/gemini-cli/tools/gemini"
